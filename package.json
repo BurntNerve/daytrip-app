@@ -1,0 +1,28 @@
+{
+  "name": "daytrip-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brootroot/daytrip-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brootroot/daytrip-app/issues"
+  },
+  "homepage": "https://github.com/brootroot/daytrip-app#readme",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "chai": "^4.1.2",
+    "express": "^4.15.4",
+    "morgan": "^1.8.2",
+    "nodemon": "^1.12.1",
+    "yelp-fusion": "^1.0.3"
+  }
+}
