@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const yelp = require('yelp-fusion');
+
 const clientId = 'zWM7p6Q2220lLqmTUE1jyg';
 const clientSecret =
   'pMjDZTGKtSBgfxmEzZgTTX3pVUSjTcrahyZXufTrURzgEfUAJM8kI47cW9kHSGqo';

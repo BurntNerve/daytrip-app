@@ -2,7 +2,7 @@ handleYelpSearch = () => {
   console.log('searching');
   const searchTerms = {
     //term: prompt('What do you want to search for?'),
-    location: prompt('Where do you want to go?'),
+    location: 'Haymarket', //prompt('Where do you want to go?'),
     limit: 15
   };
   const activity = {
