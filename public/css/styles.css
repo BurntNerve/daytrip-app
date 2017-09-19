@@ -1,5 +1,5 @@
 body {
-  font-family: 'Archivo Narrow', sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
   color: #333;
   max-width: 100vw;
 }
@@ -34,10 +34,10 @@ a {
 }
 
 .appDescriptionOne {
-  background-color: #44ffd2;
+  background-color: #2fd3ff;
   width: 100vw;
   height: 100vh;
-  /*margin: 0 auto;*/
+  margin: 0 auto;
 }
 
 .appDescriptionOne h1 {
@@ -58,17 +58,6 @@ a {
   font-family: 'Archivo Black', sans-serif;
 }
 
-/*.choice {
-  border: 1px solid black;
-  min-height: 25em;
-  min-width: 22%;
-  display: inline-block;
-  margin-left: 8%;
-  margin-top: 5%;
-  border-radius: 5px;
-  display: none;
-}*/
-
 .header {
   font-family: 'Archivo Black', sans-serif;
   font-size: 2.85em;
@@ -77,14 +66,11 @@ a {
   margin-top: 0;
 }
 
-.secondPage {
-}
-
 .definition {
   font-family: 'Libre Baskerville', serif;
   width: 100vw;
   min-height: 100vh;
-  padding-top: 10%;
+  padding-top: 20%;
   /*padding-left: 5%;*/
   font-size: 1.3em;
   box-sizing: border-box;
@@ -97,5 +83,121 @@ a {
 }
 
 .defineText {
+  padding-left: 5%;
+}
+
+.thirdPage {
+  height: 100vh;
+  width: 100vw;
+}
+.choosePrice {
+  height: 100vh;
+  width: 100vw;
+  background-color: #2fd3ff;
+  color: white;
+  box-sizing: border-box;
+  /*border: 10px solid white;*/
+}
+
+.pageTitle {
+  padding-left: 10% !important;
+  color: white;
+}
+
+.choosePrice h1 {
+  font-size: 3em;
+  padding-top: 5%;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 5%;
+}
+
+.chooseLength {
+  height: 100vh;
+  width: 100vw;
+  background-color: #44ff6a;
+  box-sizing: border-box;
+  /*border: 10px solid white;*/
+  padding-left: 5%;
+}
+
+.chooseLength h1 {
+  font-size: 3em;
+  padding-top: 5%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+button {
+  margin: 0 auto;
+  width: 80vw;
+}
+
+.choice {
+  height: 23vh;
+  width: 80vw;
+  background-color: white;
+  display: block;
+  color: #333;
+  border: 0;
+  text-align: center;
+  margin-top: 5%;
+  outline: 0;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.picked {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.choiceHeader {
+  text-align: center;
+  padding-top: 0;
+  font-size: 0.5em;
+  padding-left: 0;
+  display: inline;
+  position: absolute;
+  top: 3%;
+}
+
+.icon {
+  height: 3.3em;
+  width: 3.3em;
+  display: inline-block;
+  position: absolute;
+  left: 5%;
+  top: 11%;
+}
+
+.firstPriceHeader {
+  right: 36%;
+}
+
+.secondPriceHeader {
+  right: 24%;
+}
+
+.thirdPriceHeader {
+  right: 13%;
+}
+
+.firstLengthHeader {
+  right: 29%;
+}
+
+.secondLengthHeader {
+  right: 14%;
+}
+
+.thirdLengthHeader {
+  right: 23%;
+}
+.choiceDescription {
+  text-align: left;
+  padding-top: 20%;
+  font-weight: bold;
   padding-left: 5%;
 }

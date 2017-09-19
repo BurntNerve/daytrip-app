@@ -10,9 +10,10 @@
   <meta name="author" content="Sean Bray">
 
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Archivo+Narrow|Chicle|Libre+Baskerville" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Libre+Franklin" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./css/jquery-labelauty.css" />
   <link rel="stylesheet" type="text/css" href="./css/jquery.fullPage.css" />
+  <link rel="stylesheet" href="css/styles.css">
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
@@ -20,7 +21,7 @@
 
 <body>
   <div id="fullpage">
-    <div class="firstPage section">
+    <!--<div class="firstPage section">
       <div class="appDescriptionOne">
         <a><h2 class="logo"><strong>daytripper</strong></h2></a>
         <div class="headerText">
@@ -28,7 +29,7 @@
           <h1 class="header"><strong><span style="color: #FF70A6">ONE DAY</span> <br /><span style="color: #333">AT A TIME.</span></strong></h1>
         </div>
       </div>
-    </div>
+    </div>-->
 
     <div class=" secondPage section">
       <div class="definition">
@@ -36,6 +37,46 @@
         <h2 class="defineText">/ˈdā ˌtrip/</h2>
         <p class="defineText"><em>noun</em></p>
         <h1 class="typedText defineText"></h1>
+      </div>
+    </div>
+    <div class="section thirdPage">
+      <div class="choosePrice">
+        <h1 class="pageTitle">Choose your price point.</h1>
+        <button class="choice">
+          <img src="./images/019-dollar-1.png" alt="single coin" class="icon">
+          <h1 class="choiceHeader firstPriceHeader">Save</h1>
+          <p class="choiceDescription">We'll focus on getting you the most bang for your buck while still choosing highly rated things.</p>
+        </button>
+        <button class="choice">
+            <img src="./images/007-coin.png" alt="stack of coins" class="icon">
+            <h1 class="choiceHeader secondPriceHeader">Spend</h1>
+            <p class="choiceDescription">We're looking for good food, fun times, and a memory you won't forget.</p>
+        </button>
+        <button class="choice">
+          <img src="./images/046-money-bag.png" alt="bag of money" class="icon">
+          <h1 class="choiceHeader thirdPriceHeader">Splurge</h1>
+          <p class="choiceDescription">The best money can buy. If price isn't an object then we'll search for the nicest venues we can find.</p>
+        </button>
+      </div>
+    </div>
+    <div class="section">
+      <div class="chooseLength">
+        <h1 class="pageTitle">Choose your <br />trip length.</h1>
+        <button class="choice">
+          <img src="./images/hiker.png" alt="hiker" class="icon">
+          <h1 class="choiceHeader firstLengthHeader">Scout</h1>
+          <p class="choiceDescription">A quick trip comprised of two activities and a meal. Can be started just about anywhere in the day.</p>
+        </button>
+        <button class="choice">
+          <img src="./images/bonfire.png" alt="bonfire" class="icon">
+          <h1 class="choiceHeader secondLengthHeader">Pioneer</h1>
+          <p class="choiceDescription">A trip comprised of 3 activities and 2 meals. Recommended to start late morning or noon.</p>
+        </button>
+        <button class="choice">
+          <img src="./images/tent.png" alt="tent" class="icon">
+          <h1 class="choiceHeader thirdLengthHeader">Settler</h1>
+          <p class="choiceDescription">The largest trip, comprised of 4 activities and 3 meals. You'll want to start this early. </p>
+        </button>
       </div>
     </div>
   </div>

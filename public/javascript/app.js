@@ -1,5 +1,9 @@
 handleYelpSearch = () => {
   console.log('searching');
+  $('.choice').on('click', function(event) {
+    $('.choice').removeClass('picked');
+    $(this).addClass('picked');
+  });
   $('.typedText').typeIt({
     strings: [
       'A romantic getaway with that special someone.',
