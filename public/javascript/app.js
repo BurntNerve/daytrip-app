@@ -1,9 +1,42 @@
-handleYelpSearch = () => {
-  console.log('searching');
-  $('.choice').on('click', function(event) {
-    $('.choice').removeClass('picked');
-    $(this).addClass('picked');
-  });
+handleYelp = () => {
+  let lengthOfTrip;
+  let priceOfTrip;
+  handlePriceChoice = () => {
+    $('.js-priceChoice').on('click', function(event) {
+      $('.js-priceChoice').removeClass('picked');
+      $(this).addClass('picked');
+      priceOfTrip = $(this)
+        .find('h1')
+        .text();
+      if (priceOfTrip === 'Save') {
+        priceOfTrip = '1, 2';
+      } else if (priceOfTrip === 'Spend') {
+        priceOfTrip = '2, 3';
+      } else if (priceOfTrip === 'Splurge') {
+        priceOfTrip = '3, 4';
+      }
+      console.log(priceOfTrip);
+    });
+  };
+  handleLengthChoice = () => {
+    $('.js-lengthChoice').on('click', function(event) {
+      $('.js-lengthChoice').removeClass('picked');
+      $(this).addClass('picked');
+      lengthOfTrip = $(this)
+        .find('h1')
+        .text();
+      if (lengthOfTrip === 'Scout') {
+        lengthOfTrip = 3;
+      } else if (lengthOfTrip === 'Pioneer') {
+        lengthOfTrip = 5;
+      } else if (lengthOfTrip === 'Settler') {
+        lengthOfTrip = 7;
+      }
+      console.log(lengthOfTrip);
+    });
+  };
+  handlePriceChoice();
+  handleLengthChoice();
   $('.typedText').typeIt({
     strings: [
       'A romantic getaway with that special someone.',
@@ -47,6 +80,6 @@ handleYelpSearch = () => {
 };
 
 $(() => {
-  handleYelpSearch();
+  handleYelp();
   $('#fullpage').fullpage();
 });
