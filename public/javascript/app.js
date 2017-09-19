@@ -1,5 +1,20 @@
 handleYelpSearch = () => {
   console.log('searching');
+  $('.typedText').typeIt({
+    strings: [
+      'A romantic getaway with that special someone.',
+      'The time of your life with some friends.',
+      'The memory that makes you feel warm inside.'
+    ],
+    speed: 100,
+    deleteSpeed: 30,
+    autoStart: true,
+    lifeLike: true,
+    cursor: false,
+    breakLines: false,
+    deleteDelay: 1500,
+    loop: true
+  });
   const searchTerms = {
     //term: prompt('What do you want to search for?'),
     location: 'Haymarket', //prompt('Where do you want to go?'),
@@ -29,4 +44,5 @@ handleYelpSearch = () => {
 
 $(() => {
   handleYelpSearch();
+  $('#fullpage').fullpage();
 });

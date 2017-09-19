@@ -11,40 +11,45 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Archivo+Narrow|Libre+Baskerville" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Archivo+Narrow|Chicle|Libre+Baskerville" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./css/jquery.fullPage.css" />
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
 </head>
 
 <body>
+  <div id="fullpage">
+    <div class="firstPage section">
+      <div class="appDescriptionOne">
+        <a><h2 class="logo"><strong>daytripper</strong></h2></a>
+        <div class="headerText">
+          <h1 class="chooseHeader"><strong>EXPLORE<br /> <span style="color: #F6FF51">EVERYTHING</span></strong></h1>
+          <h1 class="header"><strong><span style="color: #FF70A6">ONE DAY</span> <br /><span style="color: #333">AT A TIME.</span></strong></h1>
+        </div>
+      </div>
+    </div>
 
-  <nav class="navbar">
-    <a><h1 class="logo"><strong>Daytripper</strong></h1></a>
-    <a href="#"><p class="signUp">sign up/login</p></a>
-  </nav>
-  <div class="appDescriptionOne">
-    <h1 class="chooseHeader"><strong><span style="color: #FF9770">EXPLORE</span> EVERYTHING</strong></h1>
+    <div class=" secondPage section">
+      <div class="definition">
+        <h1 class="wordName defineText">day trip<h1>
+        <h2 class="defineText">/ˈdā ˌtrip/</h2>
+        <p class="defineText"><em>noun</em></p>
+        <h1 class="typedText defineText"></h1>
+      </div>
+    </div>
   </div>
-  <div class="appDescriptionTwo">
-    <h1 class="header"><strong><span style="color: #44FFD2">ONE DAY</span> <br />AT A TIME.</strong></h1>
-    <button class="downButton">&#x25BC;</button>
-  </div>
-  <div class="definition ">
-    <h1 class="wordName defineText">day trip<h1>
-    <h2 class="defineText">/ˈdā ˌtrip/</h2>
-    <p class="defineText"><em>noun</em></p>
-    <h1 class="typedText defineText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, porro?</h1>
-  </div>
-  <div class="startPlan">
-    <h1 class="header">Plan Your Trip</h1>
-  </div>
+  <!--<div>
+    <h1>Choose Your Budget</h1>
+  </div>-->
 
   <!--<div class="choice first"></div>
   <div class="choice second"></div>
   <div class="choice third"></div>-->
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
+  <script type="text/javascript" src="./javascript/jquery.fullPage.js"></script>
   <script src="./javascript/app.js"></script>
 </body>
 </html>
