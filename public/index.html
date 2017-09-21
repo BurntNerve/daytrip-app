@@ -11,7 +11,6 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Libre+Franklin" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="./css/jquery-labelauty.css" />
   <link rel="stylesheet" type="text/css" href="./css/jquery.fullPage.css" />
   <link rel="stylesheet" href="css/styles.css">
   <!--[if lt IE 9]>
@@ -21,16 +20,6 @@
 
 <body>
   <div id="fullpage">
-    <!--<div class="firstPage section">
-      <div class="appDescriptionOne">
-        <a><h2 class="logo"><strong>daytripper</strong></h2></a>
-        <div class="headerText">
-          <h1 class="chooseHeader"><strong>EXPLORE<br /> <span style="color: #F6FF51">EVERYTHING</span></strong></h1>
-          <h1 class="header"><strong><span style="color: #FF70A6">ONE DAY</span> <br /><span style="color: #333">AT A TIME.</span></strong></h1>
-        </div>
-      </div>
-    </div>-->
-
     <div class=" secondPage section">
       <div class="definition">
         <h1 class="wordName defineText">day trip<h1>
@@ -41,7 +30,7 @@
     </div>
     <div class="section thirdPage">
       <div class="choosePrice">
-        <h1 class="pageTitle">Choose your price point.</h1>
+        <h1 class="pageTitle">Choose your price point:</h1>
         <button class="choice js-priceChoice">
           <img src="./images/019-dollar-1.png" alt="single coin" class="icon">
           <h1 class="choiceHeader firstPriceHeader">Save</h1>
@@ -61,7 +50,7 @@
     </div>
     <div class="section">
       <div class="chooseLength">
-        <h1 class="pageTitle">Choose your <br />trip length.</h1>
+        <h1 class="pageTitle">Choose your <br />trip length:</h1>
         <button class="choice js-lengthChoice">
           <img src="./images/hiker.png" alt="hiker" class="icon">
           <h1 class="choiceHeader firstLengthHeader">Scout</h1>
@@ -79,15 +68,41 @@
         </button>
       </div>
     </div>
+    <div class="section">
+      <div class="chooseActivity">
+        <h1 class="pageTitle">Choose your activites:</h1>
+        <button class="choice js-activityChoice">
+          <img src="./images/theater.png" alt="theater" class="icon">
+          <h1 class="choiceHeader firstActivityHeader">Culture</h1>
+          <p class="choiceDescription">We'll focus your activites around the local arts and entertainment.</p>
+        </button>
+        <button class="choice js-activityChoice">
+          <img src="./images/bicycle.png" alt="bicycle" class="icon">
+          <h1 class="choiceHeader secondActivityHeader">Active</h1>
+          <p class="choiceDescription">We'll focus your activities on things having to with nature, the outdoors, or sports.</p>
+        </button>
+        <button class="choice js-activityChoice">
+          <img src="./images/014-idea.png" alt="lightbulb" class="icon">
+          <h1 class="choiceHeader thirdActivityHeader">Balance</h1>
+          <p class="choiceDescription">We'll strike a balance between the two so you can get the best of both worlds.</p>
+        </button>
+      </div>
+    </div>
+    <div class="section">
+      <div class="chooseLocation">
+        <h1 class="pageTitle">Choose your location:</h1>
+        <div class="center">
+          <input type="text" class="locationSearch" size="24" placeholder="City, state, or zipcode">
+        </div>
+        <button class="choice js-currentLocation currentLocation">
+          <img src="./images/048-location.png" alt="current location" class="icon">
+          <h1 class="choiceHeader firstLocationHeader">Current</h1>
+          <p class="choiceDescription">Choose this if you want to make the best of your surroundings and find things to do nearby.</p>
+        </button>
+        <button class="planTrip js-planTrip">Plan</button>
+      </div>
+    </div>
   </div>
-  <!--<div>
-    <h1>Choose Your Budget</h1>
-  </div>-->
-
-  <!--<div class="choice first"></div>
-  <div class="choice second"></div>
-  <div class="choice third"></div>-->
-
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
   <script type="text/javascript" src="./javascript/jquery.fullPage.js"></script>
