@@ -16,6 +16,7 @@ const token =
 const client = yelp.client(token);
 
 let tempAgenda;
+let tempOptions;
 
 router.post('/', function(req, res, next) {
   console.log(req.body);
@@ -43,6 +44,16 @@ router.post('/agenda', function(req, res, next) {
 
 router.get('/agenda', function(req, res, next) {
   res.status(200).send(tempAgenda);
+});
+
+router.post('/options', function(req, res, next) {
+  res.status(201).send();
+  tempOptions = req.body;
+  console.log(req.body);
+});
+
+router.get('/options', function(req, res, next) {
+  res.status(200).json(tempOptions);
 });
 
 module.exports = router;
