@@ -30,7 +30,7 @@ handleYelp = () => {
 
   handlePriceChoice = () => {
     $('.js-priceChoice').on('click', function(event) {
-      $.fn.fullpage.moveTo(3);
+      /*$.fn.fullpage.moveTo(3);*/
       $('.js-priceChoice').removeClass('picked');
       $(this).addClass('picked');
       priceOfTrip = $(this)
@@ -49,7 +49,7 @@ handleYelp = () => {
 
   handleLengthChoice = () => {
     $('.js-lengthChoice').on('click', function(event) {
-      $.fn.fullpage.moveTo(4);
+      /*$.fn.fullpage.moveTo(4);*/
       $('.js-lengthChoice').removeClass('picked');
       $(this).addClass('picked');
       lengthOfTrip = $(this)
@@ -68,7 +68,7 @@ handleYelp = () => {
 
   handleActivityChoice = () => {
     $('.js-activityChoice').on('click', function(event) {
-      $.fn.fullpage.moveTo(5);
+      /*$.fn.fullpage.moveTo(5);*/
       $('.js-activityChoice').removeClass('picked');
       $(this).addClass('picked');
       activityOfTrip = $(this)
