@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: tb/C/Vp6IYtbSK3cthmzu+gkczjWqSDlBZFgXuQbzvxx/seTzkqJEF9rM+Ahqvog4uTkKC9GXmKQSZz2fMw685PoIyVQ/cF2opus2Vv/EdnNX+loNkE7AKWGE/8oqZWFkFkU5ycavMnb3mqZl6cQRqS+YLMTNOjZoWwr4v6a4TPbFInFih/CyMGvnMashg8fcpoR1RThJIw+CydNQSB2q9HqrzOD7RkxoOW8tciwaGC/t3JcX7oWFxYC5knK2iQq2gzFEIFxmy98TPVFaLsVEIA9Z7EpQyWrpR13w7gbXzGHI5laQXEROw03tgPQjC1glHDTBWvStNK8jmPlZRzvN6SehG7a4wHH2FGIOsVBqp4l6JHMdbQ+HjKkjrVkOctMzfJVt0iLwuSRGe+nwScV86nFQQxXm6DBOvSqkyJ1BF0iECPEIHqcTBEHr5oedWdCU1Krgue+HCVfCxd3wchurrQ2xPnCcjbLV88tMynPd4jhTQ6sXINa97hW4JhDJ94Cpg3Hr+yQKXrQ3KbI6+YlsQE7PGeOA9vhPOqxLHV+u6lmdP4SxYdYcYWcQYj2x5NWe/7AY4avqxoGi5B7mSrrXGiiAVs9EQUcOZ21An88L0Z0yv1HynC7qUbjnO7zE1uNsduu+G+vjkd6D8UrWhOJxsDg+1Rlq7v5IX/oimklXAg=
+  app: immense-headland-39607
+  on:
+    repo: brootroot/daytrip-app
