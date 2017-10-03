@@ -84,6 +84,38 @@ handleYelp = () => {
   };
 
   handleLocationPlan = () => {
+    $('.locationSearch').keyup(function(event) {
+      if (event.keyCode == 13) {
+        if ($('.locationSearch').val() === '') {
+          $('.locationSearch').attr('placeholder', 'Enter a location.');
+        } else if (priceOfTrip === undefined) {
+          $.fn.fullpage.moveTo(2);
+        } else if (lengthOfTrip === undefined) {
+          $.fn.fullpage.moveTo(3);
+        } else if (activityOfTrip === undefined) {
+          $.fn.fullpage.moveTo(4);
+        } else {
+          locationOfTrip = $('.locationSearch').val();
+          console.log(locationOfTrip);
+
+          const options = {
+            price: priceOfTrip,
+            length: lengthOfTrip,
+            activity: activityOfTrip,
+            location: locationOfTrip
+          };
+
+          $.ajax({
+            type: 'POST',
+            url: '/data/options',
+            data: options,
+            success: function() {
+              location.assign('../html/agenda.html');
+            }
+          });
+        }
+      }
+    });
     $('.js-planTrip').on('click', function() {
       if ($('.locationSearch').val() === '') {
         $('.locationSearch').attr('placeholder', 'Enter a location.');
