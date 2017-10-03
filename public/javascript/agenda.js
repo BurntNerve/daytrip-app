@@ -74,6 +74,11 @@ handleAgendaPage = () => {
                 tempAgenda['0'].location.display_address[1]
               );
               $('.itemOnePhone').text(formatPhoneNumber(tempAgenda['0'].phone));
+              if (tempAgenda['0'].is_closed === 'false') {
+                $('.itemOneOpen').text('Currently Open');
+              } else {
+                $('.itemOneOpen').text('Currently Closed');
+              }
 
               $('.itemNameTwo').text(tempAgenda['1'].name);
               $('.itemTwoPicture').attr('src', tempAgenda['1'].image_url);
@@ -85,6 +90,11 @@ handleAgendaPage = () => {
                 tempAgenda['1'].location.display_address[1]
               );
               $('.itemTwoPhone').text(formatPhoneNumber(tempAgenda['1'].phone));
+              if (tempAgenda['1'].is_closed === 'false') {
+                $('.itemTwoOpen').text('Currently Open');
+              } else {
+                $('.itemTwoOpen').text('Currently Closed');
+              }
 
               $('.itemNameThree').text(tempAgenda['2'].name);
               $('.itemThreePicture').attr('src', tempAgenda['2'].image_url);
@@ -98,6 +108,11 @@ handleAgendaPage = () => {
               $('.itemThreePhone').text(
                 formatPhoneNumber(tempAgenda['2'].phone)
               );
+              if (tempAgenda['2'].is_closed === 'false') {
+                $('.itemThreeOpen').text('Currently Open');
+              } else {
+                $('.itemThreeOpen').text('Currently Closed');
+              }
 
               $('.itemTwo').css('background-color', food);
 
@@ -130,6 +145,11 @@ handleAgendaPage = () => {
                 $('.itemFourPhone').text(
                   formatPhoneNumber(tempAgenda['3'].phone)
                 );
+                if (tempAgenda['3'].is_closed === 'false') {
+                  $('.itemFourOpen').text('Currently Open');
+                } else {
+                  $('.itemFourOpen').text('Currently Closed');
+                }
 
                 $('.itemNameFive').text(tempAgenda['4'].name);
                 $('.itemFivePicture').attr('src', tempAgenda['4'].image_url);
@@ -143,6 +163,11 @@ handleAgendaPage = () => {
                 $('.itemFivePhone').text(
                   formatPhoneNumber(tempAgenda['0'].phone)
                 );
+                if (tempAgenda['4'].is_closed === 'false') {
+                  $('.itemFiveOpen').text('Currently Open');
+                } else {
+                  $('.itemFiveOpen').text('Currently Closed');
+                }
 
                 $('.itemTwo').css('background-color', food);
                 $('.itemFive').css('background-color', food);
@@ -179,6 +204,11 @@ handleAgendaPage = () => {
                   $('.itemSixPhone').text(
                     formatPhoneNumber(tempAgenda['5'].phone)
                   );
+                  if (tempAgenda['5'].is_closed === 'false') {
+                    $('.itemSixOpen').text('Currently Open');
+                  } else {
+                    $('.itemSixOpen').text('Currently Closed');
+                  }
 
                   $('.itemNameSeven').text(tempAgenda['6'].name);
                   $('.itemSevenPicture').attr('src', tempAgenda['6'].image_url);
@@ -194,6 +224,11 @@ handleAgendaPage = () => {
                   $('.itemSevenPhone').text(
                     formatPhoneNumber(tempAgenda['6'].phone)
                   );
+                  if (tempAgenda['6'].is_closed === 'false') {
+                    $('.itemSevenOpen').text('Currently Open');
+                  } else {
+                    $('.itemSevenOpen').text('Currently Closed');
+                  }
 
                   $('.itemOne').css('background-color', food);
                   $('.itemFour').css('background-color', food);

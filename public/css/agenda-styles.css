@@ -79,4 +79,11 @@ body {
 .itemPhone {
   margin-left: 2.5%;
   margin-top: 2%;
+  margin-bottom: 0;
+}
+
+.itemOpen {
+  margin-left: 2.5%;
+  margin-top: 2.5%;
+  color: white;
 }
