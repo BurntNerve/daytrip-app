@@ -11,6 +11,10 @@ handleYelp = () => {
     e.preventDefault();
   });
 
+  $('.secondPage').on('click', function(event) {
+    $.fn.fullpage.moveTo(2);
+  });
+
   function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
