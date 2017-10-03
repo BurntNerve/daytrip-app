@@ -18,6 +18,7 @@ handleYelp = () => {
   function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
+      console.log(locationOfTrip);
     } else {
       alert('Geolocation is not supported by this browser.');
     }
@@ -26,6 +27,20 @@ handleYelp = () => {
     const currentLocation =
       position.coords.latitude + ' ' + position.coords.longitude;
     locationOfTrip = currentLocation;
+    const options = {
+      price: priceOfTrip,
+      length: lengthOfTrip,
+      activity: activityOfTrip,
+      location: locationOfTrip
+    };
+    $.ajax({
+      type: 'POST',
+      url: '/data/options',
+      data: options,
+      success: function() {
+        location.assign('../html/agenda.html');
+      }
+    });
   }
 
   handlePriceChoice = () => {
@@ -158,23 +173,6 @@ handleYelp = () => {
       } else {
         console.log('AGGHHHH');
         getLocation();
-        setTimeout(function() {
-          console.log(locationOfTrip);
-          const options = {
-            price: priceOfTrip,
-            length: lengthOfTrip,
-            activity: activityOfTrip,
-            location: locationOfTrip
-          };
-          $.ajax({
-            type: 'POST',
-            url: '/data/options',
-            data: options,
-            success: function() {
-              location.assign('../html/agenda.html');
-            }
-          });
-        }, 100);
       }
     });
   };
