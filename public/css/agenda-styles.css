@@ -1,0 +1,82 @@
+body {
+  font-family: 'Libre Franklin', sans-serif;
+  color: #333;
+}
+
+.agendaItem {
+  box-sizing: border-box;
+  width: 90vw;
+  height: 70vh;
+  margin: 0 auto;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  position: relative;
+  border-radius: 5px;
+}
+
+.agendaTitle {
+  text-align: center;
+  font-weight: 600;
+  font-size: 2.5em;
+}
+
+.scoutItem {
+  display: none;
+}
+
+.pioneerItem {
+  display: none;
+}
+
+.settlerItem {
+  display: none;
+}
+
+.itemName {
+  text-align: left;
+  display: block;
+  /*position: absolute;
+  top: 2.5%;*/
+  margin: 0;
+  margin-left: 2.5%;
+  margin-top: 2.5%;
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+}
+
+.picture {
+  display: block;
+  height: 45%;
+  width: 100%;
+  /*margin-top: 2.5%;
+  margin-left: 2.5%;*/
+  border-radius: 5px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.itemInfo {
+  box-sizing: border-box;
+  height: 55%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.itemGenre {
+  margin-left: 2.5%;
+  font-size: 1.35em;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+}
+
+.itemAddress {
+  margin-left: 2.5%;
+  margin-bottom: 0.5%;
+  margin-top: 0.5%;
+}
+
+.itemPhone {
+  margin-left: 2.5%;
+  margin-top: 2%;
+}

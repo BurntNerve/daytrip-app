@@ -7,9 +7,26 @@ handleYelp = () => {
   $('.planLink').bind('click', function(e) {
     e.preventDefault();
   });
+  $('.currentLocationPlan').bind('click', function(e) {
+    e.preventDefault();
+  });
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      alert('Geolocation is not supported by this browser.');
+    }
+  }
+  function showPosition(position) {
+    const currentLocation =
+      position.coords.latitude + ' ' + position.coords.longitude;
+    locationOfTrip = currentLocation;
+  }
 
   handlePriceChoice = () => {
     $('.js-priceChoice').on('click', function(event) {
+      $.fn.fullpage.moveTo(3);
       $('.js-priceChoice').removeClass('picked');
       $(this).addClass('picked');
       priceOfTrip = $(this)
@@ -28,6 +45,7 @@ handleYelp = () => {
 
   handleLengthChoice = () => {
     $('.js-lengthChoice').on('click', function(event) {
+      $.fn.fullpage.moveTo(4);
       $('.js-lengthChoice').removeClass('picked');
       $(this).addClass('picked');
       lengthOfTrip = $(this)
@@ -46,6 +64,7 @@ handleYelp = () => {
 
   handleActivityChoice = () => {
     $('.js-activityChoice').on('click', function(event) {
+      $.fn.fullpage.moveTo(5);
       $('.js-activityChoice').removeClass('picked');
       $(this).addClass('picked');
       activityOfTrip = $(this)
@@ -91,10 +110,43 @@ handleYelp = () => {
       }
     });
   };
+
+  handleCurrentLocation = () => {
+    $('.js-currentLocation').on('click', function(event) {
+      if (priceOfTrip === undefined) {
+        $.fn.fullpage.moveTo(2);
+      } else if (lengthOfTrip === undefined) {
+        $.fn.fullpage.moveTo(3);
+      } else if (activityOfTrip === undefined) {
+        $.fn.fullpage.moveTo(4);
+      } else {
+        console.log('AGGHHHH');
+        getLocation();
+        setTimeout(function() {
+          console.log(locationOfTrip);
+          const options = {
+            price: priceOfTrip,
+            length: lengthOfTrip,
+            activity: activityOfTrip,
+            location: locationOfTrip
+          };
+          $.ajax({
+            type: 'POST',
+            url: '/data/options',
+            data: options,
+            success: function() {
+              location.assign('../html/agenda.html');
+            }
+          });
+        }, 100);
+      }
+    });
+  };
   handlePriceChoice();
   handleLengthChoice();
   handleActivityChoice();
   handleLocationPlan();
+  handleCurrentLocation();
 };
 
 $(() => {
