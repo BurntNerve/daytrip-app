@@ -184,6 +184,9 @@ handleAgendaPage = () => {
                 $('.itemFourSecondAddress').text(
                   tempAgenda['3'].location.display_address[1]
                 );
+                $('.itemFourThirdAddress').text(
+                  tempAgenda['3'].location.display_address[2]
+                );
                 $('.itemFourPhone').text(
                   formatPhoneNumber(tempAgenda['3'].phone)
                 );
@@ -207,6 +210,9 @@ handleAgendaPage = () => {
                 );
                 $('.itemFiveSecondAddress').text(
                   tempAgenda['4'].location.display_address[1]
+                );
+                $('.itemFiveThirdAddress').text(
+                  tempAgenda['4'].location.display_address[2]
                 );
                 $('.itemFivePhone').text(
                   formatPhoneNumber(tempAgenda['0'].phone)
@@ -266,6 +272,9 @@ handleAgendaPage = () => {
                   $('.itemSixSecondAddress').text(
                     tempAgenda['5'].location.display_address[1]
                   );
+                  $('.itemSixThirdAddress').text(
+                    tempAgenda['5'].location.display_address[2]
+                  );
                   $('.itemSixPhone').text(
                     formatPhoneNumber(tempAgenda['5'].phone)
                   );
@@ -294,6 +303,9 @@ handleAgendaPage = () => {
                   );
                   $('.itemSevenSecondAddress').text(
                     tempAgenda['6'].location.display_address[1]
+                  );
+                  $('.itemSevenThirdAddress').text(
+                    tempAgenda['6'].location.display_address[2]
                   );
                   $('.itemSevenPhone').text(
                     formatPhoneNumber(tempAgenda['6'].phone)

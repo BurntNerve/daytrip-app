@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
 
@@ -19,23 +20,23 @@
 </head>
 
 <body>
+  <nav class="navbar">
+    <h1 class="logo"><span id="red">D</span><span id="yellow">a</span><span id="blue">y</span>Tripper</h2>
+  </nav>
+  <main>
   <div id="fullpage">
     <div class=" secondPage section">
       <div class="definition">
-        <div class="navbar">
-          <!--<h2 class="logo">DayTripper</h2>-->
-
-        </div>
         <h1 class="wordName defineText">day trip<h1>
         <h2 class="defineText">/ˈdā ˌtrip/</h2>
         <p class="defineText"><em>noun</em></p>
         <h1 class="typedText defineText cycle"></h1>
-      </div>
+    </div>
     </div>
     <div class="section thirdPage">
       <div class="choosePrice">
         <h1 class="pageTitle">Choose your price point:</h1>
-        <button class="choice js-priceChoice">
+        <button class="choice js-priceChoice firstChoice">
           <img src="./images/019-dollar-1.png" alt="single coin" class="icon">
           <h1 class="choiceHeader firstPriceHeader">Save</h1>
           <p class="choiceDescription">We'll focus on getting you the most bang for your buck while still choosing highly rated things.</p>
@@ -55,7 +56,7 @@
     <div class="section">
       <div class="chooseLength">
         <h1 class="pageTitle">Choose your <br />trip length:</h1>
-        <button class="choice js-lengthChoice">
+        <button class="choice js-lengthChoice firstChoice">
           <img src="./images/hiker.png" alt="hiker" class="icon">
           <h1 class="choiceHeader firstLengthHeader">Scout</h1>
           <p class="choiceDescription">A quick trip comprised of two activities and a meal. Can be started just about anywhere in the day.</p>
@@ -75,7 +76,7 @@
     <div class="section">
       <div class="chooseActivity">
         <h1 class="pageTitle">Choose your activites:</h1>
-        <button class="choice js-activityChoice">
+        <button class="choice js-activityChoice firstChoice">
           <img src="./images/theater.png" alt="theater" class="icon">
           <h1 class="choiceHeader firstActivityHeader">Culture</h1>
           <p class="choiceDescription">We'll focus your activites around the local arts and entertainment.</p>
@@ -109,10 +110,12 @@
         <a href="./html/agenda.html" class="planLink"><button class="planTrip js-planTrip">Plan</button></a>
       </div>
     </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
-  <script type="text/javascript" src="./javascript/jquery.fullPage.js"></script>
-  <script src="./javascript/app.js"></script>
+    </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
+    <script type="text/javascript" src="./javascript/jquery.fullPage.js"></script>
+    <script src="./javascript/app.js"></script>
 </body>
+
 </html>
