@@ -45,7 +45,7 @@ body {
   color: white;
 }
 
-.picture {
+.pictureDisplay {
   display: block;
   height: 45%;
   width: 100%;
@@ -54,6 +54,41 @@ body {
   border-radius: 5px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+  position: relative;
+}
+
+.picture {
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.noPicture {
+  height: 90%;
+  width: 90%;
+  border-radius: 5px;
+  background-color: white;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  top: 7%;
+  display: none;
+}
+
+.itemFourPicture {
+  display: none;
+}
+
+.itemFourNoPicture {
+  display: block;
+}
+
+.noPicture h2 {
+  text-align: center;
+  position: relative;
+  top: 40%;
+  margin: 0;
 }
 
 .itemInfo {

@@ -150,13 +150,11 @@ handleYelp = () => {
           activity: activityOfTrip,
           location: locationOfTrip
         };
-
         $.ajax({
           type: 'POST',
           url: '/data/options',
           data: options
         });
-
         $('.planLink').unbind('click');
       }
     });
@@ -171,7 +169,6 @@ handleYelp = () => {
       } else if (activityOfTrip === undefined) {
         $.fn.fullpage.moveTo(4);
       } else {
-        console.log('AGGHHHH');
         getLocation();
       }
     });
