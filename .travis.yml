@@ -1,5 +1,14 @@
 language: node_js
 node_js: node
+services:
+  - mongodb
+
+addons:
+  apt:
+    sources:
+      - mongodb-3.4-precise
+    packages:
+      - mongodb-org-server
 deploy:
   provider: heroku
   api_key:
