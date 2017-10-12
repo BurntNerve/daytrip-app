@@ -4,6 +4,107 @@ handleYelp = () => {
   let activityOfTrip;
   let locationOfTrip;
 
+  handleSignUp = () => {
+    $('.signUp').on('click', function() {
+      $('.signUpPage').slideDown('slow');
+      $('.signUpConfirm').on('click', function() {
+        if ($('.username').val() === '') {
+          $('.username').attr('placeholder', 'Enter a username.');
+        } else if ($('.password').val() === '') {
+          $('.password').attr('placeholder', 'Enter a password.');
+        } else if ($('.confirmPassword').val() === '') {
+          $('.confirmPassword').attr('placeholder', 'Confirm your password.');
+        } else if ($('.confirmPassword').val() !== $('.password').val()) {
+          $('.confirmPassword').val('');
+          $('.confirmPassword').attr('placeholder', 'Must match.');
+        } else {
+          $.ajax({
+            type: 'POST',
+            url: '/users',
+            data: {
+              username: $('.username').val(),
+              password: $('.password').val()
+            },
+            success: function(response) {
+              console.log(response);
+              $.fn.fullpage.moveTo(2);
+
+              $('.signUp').css('background-color', '#2fd3ff');
+              $('.signUp').css('color', 'white');
+              $('.signUp').css('border', '0');
+              $('.signUp').text('Signed Up');
+              $('.login').css('background-color', '#f26060');
+              $('.login').css('color', 'white');
+              $('.login').css('border', '0');
+              $('.login').text('Logged In');
+              $('.accountLink').text($('.username').val());
+              $('.accountLink').css('display', 'inline-block');
+              $('.signUpPage').slideUp('slow');
+              $('.username').val('');
+              $('.password').val('');
+              $('.confirmPassword').val('');
+            },
+            error: function(err) {
+              console.log(err);
+            }
+          });
+        }
+      });
+    });
+  };
+
+  handleLogIn = () => {
+    $('.login').on('click', function() {
+      $('.logInPage').slideDown('slow');
+      $('.logInConfirm').on('click', function() {
+        if ($('.logInUsername').val() === '') {
+          $('.logInUsername').attr('placeholder', 'Enter a username.');
+        } else if ($('.logInPassword').val() === '') {
+          $('.logInPassword').attr('placeholder', 'Enter a password.');
+        } else {
+          $.ajax({
+            type: 'POST',
+            url: '/auth/login',
+            headers: {
+              Authorization:
+                'Basic ' +
+                btoa(
+                  $('.logInUsername').val() + ':' + $('.logInPassword').val()
+                )
+            },
+            success: function(response) {
+              const AuthToken = response.authToken;
+              $.ajax({
+                type: 'POST',
+                url: '/auth/refresh',
+                headers: {
+                  Authorization: 'Bearer ' + AuthToken
+                },
+                success: function(success) {
+                  $('.login').css('background-color', '#f26060');
+                  $('.login').css('color', 'white');
+                  $('.login').css('border', '0');
+                  $('.login').text('Logged In');
+                  $('.accountLink').text($('.logInUsername').val());
+                  $('.accountLink').css('display', 'inline-block');
+                  $('.logInPage').slideUp('slow');
+                  $('.username').val('');
+                  $('.password').val('');
+                },
+                error: function(err) {
+                  console.log(err);
+                }
+              });
+            },
+            error: function(err) {
+              console.log(err);
+            }
+          });
+        }
+      });
+    });
+  };
+
   $('.planLink').bind('click', function(e) {
     e.preventDefault();
   });
@@ -169,6 +270,8 @@ handleYelp = () => {
       }
     });
   };
+  handleSignUp();
+  handleLogIn();
   handlePriceChoice();
   handleLengthChoice();
   handleActivityChoice();
@@ -193,7 +296,7 @@ $(() => {
     lifeLike: true,
     cursor: false,
     breakLines: false,
-    deleteDelay: 1500,
+    deleteDelay: 4000,
     loop: true
   });
 });

@@ -5,7 +5,6 @@ const yelp = require('yelp-fusion');
 const jsonParser = require('body-parser').json();
 
 const { DATABASE_URL, PORT } = require('../config');
-const Agenda = require('../models.js');
 
 const clientId = 'zWM7p6Q2220lLqmTUE1jyg';
 const clientSecret =

@@ -17,12 +17,20 @@
   },
   "homepage": "https://github.com/brootroot/daytrip-app#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.1",
     "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "dotenv": "^4.0.0",
     "express": "^4.15.4",
+    "jsonwebtoken": "^8.1.0",
+    "mocha": "^4.0.1",
     "mongoose": "^4.11.12",
     "morgan": "^1.8.2",
     "nodemon": "^1.12.1",
+    "passport": "^0.4.0",
+    "passport-http": "^0.3.0",
+    "passport-jwt": "^3.0.0",
     "yelp-fusion": "^1.0.3"
   }
 }
