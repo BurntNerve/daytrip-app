@@ -43,18 +43,20 @@ router.post('/agenda', function(req, res, next) {
   tempAgenda = req.body;
   const query = { username: currentUser };
   const options = { new: true };
-  User.findOneAndUpdate(
-    query,
-    { $push: { agendas: tempAgenda } },
-    options,
-    function(err, docs) {
+  if (currentUser) {
+    User.findOneAndUpdate(
+      query,
+      { $push: { agendas: tempAgenda } },
+      options,
+      function(err, docs) {
+        console.log(docs);
+      }
+    );
+    User.find({ username: currentUser }, function(err, docs) {
       console.log(docs);
-    }
-  );
-  User.find({ username: currentUser }, function(err, docs) {
-    console.log(err);
-    console.log(docs);
-  });
+      console.log(docs[0]['agendas'].length);
+    });
+  }
   console.log(tempAgenda);
   res.status(204).send();
 });

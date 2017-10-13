@@ -217,10 +217,10 @@ handleYelp = () => {
   };
 
   handleLocationPlan = () => {
-    $('.locationSearch').keyup(function(event) {
+    $('.locationSearchSpecial').keyup(function(event) {
       if (event.keyCode == 13) {
-        if ($('.locationSearch').val() === '') {
-          $('.locationSearch').attr('placeholder', 'Enter a location.');
+        if ($('.locationSearchSpecial').val() === '') {
+          $('.locationSearchSpecial').attr('placeholder', 'Enter a location.');
         } else if (priceOfTrip === undefined) {
           $.fn.fullpage.moveTo(2);
         } else if (lengthOfTrip === undefined) {
@@ -228,7 +228,8 @@ handleYelp = () => {
         } else if (activityOfTrip === undefined) {
           $.fn.fullpage.moveTo(4);
         } else {
-          locationOfTrip = $('.locationSearch').val();
+          console.log('weeee');
+          locationOfTrip = $('.locationSearchSpecial').val();
           console.log(locationOfTrip);
 
           const options = {
@@ -243,6 +244,7 @@ handleYelp = () => {
             url: '/data/options',
             data: options,
             success: function() {
+              console.log('weeeee');
               location.assign('../html/agenda.html');
             }
           });
@@ -250,16 +252,19 @@ handleYelp = () => {
       }
     });
     $('.js-planTrip').on('click', function() {
-      if ($('.locationSearch').val() === '') {
-        $('.locationSearch').attr('placeholder', 'Enter a location.');
+      console.log('clicked!');
+      if ($('.locationSearchSpecial').val() === '') {
+        console.log('type something');
+        $('.locationSearchSpecial').attr('placeholder', 'Enter a location.');
       } else if (priceOfTrip === undefined) {
+        console.log('pick a price');
         $.fn.fullpage.moveTo(2);
       } else if (lengthOfTrip === undefined) {
         $.fn.fullpage.moveTo(3);
       } else if (activityOfTrip === undefined) {
         $.fn.fullpage.moveTo(4);
       } else {
-        locationOfTrip = $('.locationSearch').val();
+        locationOfTrip = $('.locationSearchSpecial').val();
         console.log(locationOfTrip);
 
         const options = {

@@ -131,7 +131,7 @@ handleAgendaPage = () => {
               $('.itemThreeSecondAddress').text(
                 tempAgenda['2'].location.display_address[1]
               );
-              $('.itemOneThirdAddress').text(
+              $('.itemThreeThirdAddress').text(
                 tempAgenda['2'].location.display_address[2]
               );
               $('.itemThreePhone').text(
