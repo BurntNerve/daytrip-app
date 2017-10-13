@@ -43,6 +43,14 @@ handleYelp = () => {
               $('.username').val('');
               $('.password').val('');
               $('.confirmPassword').val('');
+
+              $.ajax({
+                type: 'POST',
+                url: '/current',
+                data: {
+                  currentUser: $('.accountLink').text()
+                }
+              });
             },
             error: function(err) {
               console.log(err);
@@ -91,6 +99,14 @@ handleYelp = () => {
                   $('.logInPage').slideUp('slow');
                   $('.username').val('');
                   $('.password').val('');
+
+                  $.ajax({
+                    type: 'POST',
+                    url: '/data/current',
+                    data: {
+                      currentUser: $('.accountLink').text()
+                    }
+                  });
                 },
                 error: function(err) {
                   console.log(err);

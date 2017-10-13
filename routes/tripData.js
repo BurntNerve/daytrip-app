@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const yelp = require('yelp-fusion');
 const jsonParser = require('body-parser').json();
+const passport = require('passport');
 
 const { User } = require('../Users/models.js');
 
@@ -18,6 +19,7 @@ const client = yelp.client(token);
 
 let tempAgenda;
 let tempOptions;
+let currentUser;
 
 router.post('/', function(req, res, next) {
   console.log(req.body);
@@ -39,8 +41,20 @@ router.post('/', function(req, res, next) {
 router.post('/agenda', function(req, res, next) {
   console.log('recieved!');
   tempAgenda = req.body;
-  const query = { username: 'newSean' };
-  User.findOneAndUpdate(query, { agendas: 'fuck you' });
+  const query = { username: currentUser };
+  const options = { new: true };
+  User.findOneAndUpdate(
+    query,
+    { $push: { agendas: tempAgenda } },
+    options,
+    function(err, docs) {
+      console.log(docs);
+    }
+  );
+  User.find({ username: currentUser }, function(err, docs) {
+    console.log(err);
+    console.log(docs);
+  });
   console.log(tempAgenda);
   res.status(204).send();
 });
@@ -57,6 +71,12 @@ router.post('/options', function(req, res, next) {
 
 router.get('/options', function(req, res, next) {
   res.status(200).json(tempOptions);
+});
+
+router.post('/current', function(req, res, next) {
+  currentUser = req.body.currentUser;
+  console.log(currentUser);
+  res.status(204).send();
 });
 
 module.exports = router;
