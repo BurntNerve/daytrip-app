@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const yelp = require('yelp-fusion');
 const jsonParser = require('body-parser').json();
 
+const { User } = require('../Users/models.js');
+
 const { DATABASE_URL, PORT } = require('../config');
 
 const clientId = 'zWM7p6Q2220lLqmTUE1jyg';
@@ -37,6 +39,8 @@ router.post('/', function(req, res, next) {
 router.post('/agenda', function(req, res, next) {
   console.log('recieved!');
   tempAgenda = req.body;
+  const query = { username: 'newSean' };
+  User.findOneAndUpdate(query, { agendas: 'fuck you' });
   console.log(tempAgenda);
   res.status(204).send();
 });

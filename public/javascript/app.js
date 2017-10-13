@@ -81,6 +81,7 @@ handleYelp = () => {
                   Authorization: 'Bearer ' + AuthToken
                 },
                 success: function(success) {
+                  $.fn.fullpage.moveTo(2);
                   $('.login').css('background-color', '#f26060');
                   $('.login').css('color', 'white');
                   $('.login').css('border', '0');
