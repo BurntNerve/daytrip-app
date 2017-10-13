@@ -397,6 +397,8 @@ handleAgendaPage = () => {
                       return acc;
                     }, {});
 
+                    agenda.info = agendaOptions;
+
                     console.log(agenda);
 
                     $.ajax({
@@ -444,6 +446,8 @@ handleAgendaPage = () => {
                           acc[i] = cur;
                           return acc;
                         }, {});
+
+                        agenda.info = agendaOptions;
 
                         console.log(agenda);
                         $.ajax({
@@ -496,6 +500,8 @@ handleAgendaPage = () => {
                       return acc;
                     }, {});
 
+                    agenda.info = agendaOptions;
+
                     console.log(agenda);
 
                     $.ajax({
@@ -542,6 +548,7 @@ handleAgendaPage = () => {
                           return acc;
                         }, {});
 
+                        agenda.info = agendaOptions;
                         $.ajax({
                           type: 'POST',
                           url: '/data/agenda',
@@ -591,6 +598,8 @@ handleAgendaPage = () => {
                       acc[i] = cur;
                       return acc;
                     }, {});
+
+                    agenda.options = agendaOptions;
 
                     console.log(agenda);
 
@@ -643,6 +652,8 @@ handleAgendaPage = () => {
                           acc[i] = cur;
                           return acc;
                         }, {});
+
+                        agenda.options = agendaOptions;
 
                         $.ajax({
                           type: 'POST',

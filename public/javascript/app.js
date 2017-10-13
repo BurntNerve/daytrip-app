@@ -3,6 +3,45 @@ handleYelp = () => {
   let priceOfTrip;
   let activityOfTrip;
   let locationOfTrip;
+  let loggedOut;
+
+  handleLogOut = () => {
+    $('.logOut').on('click', function() {
+      $.ajax({
+        type: 'GET',
+        url: '/data/current/remove',
+        success: function(response) {
+          console.log('supposedly logged out!');
+          $('.logOut').addClass('login');
+          $('.login').removeClass('logOut');
+          $('.accountLink').text('');
+          $('.accountLink').css('display', 'none');
+          $('.login').text('Log In');
+          console.log('second');
+        }
+      });
+    });
+  };
+
+  $.ajax({
+    type: 'GET',
+    url: '/data/current',
+    success: function(response) {
+      console.log(response);
+      console.log(response === '');
+      if (response !== '') {
+        console.log('pre logged in');
+        $('.accountLink').text(response);
+        $('.accountLink').css('display', 'inline-block');
+        $('.login').css('display', 'none');
+        $('.logOut').css('display', 'block');
+
+        handleLogOut();
+      } /*else {
+        handleLogIn();
+      }*/
+    }
+  });
 
   handleSignUp = () => {
     $('.signUp').on('click', function() {
@@ -33,16 +72,13 @@ handleYelp = () => {
               $('.signUp').css('color', 'white');
               $('.signUp').css('border', '0');
               $('.signUp').text('Signed Up');
-              $('.login').css('background-color', '#f26060');
-              $('.login').css('color', 'white');
-              $('.login').css('border', '0');
-              $('.login').text('Logged In');
               $('.accountLink').text($('.username').val());
               $('.accountLink').css('display', 'inline-block');
               $('.signUpPage').slideUp('slow');
               $('.username').val('');
               $('.password').val('');
               $('.confirmPassword').val('');
+              $('.accountLink').unbind('click');
 
               $.ajax({
                 type: 'POST',
@@ -63,6 +99,7 @@ handleYelp = () => {
 
   handleLogIn = () => {
     $('.login').on('click', function() {
+      console.log('clicked the log in button');
       $('.logInPage').slideDown('slow');
       $('.logInConfirm').on('click', function() {
         if ($('.logInUsername').val() === '') {
@@ -90,15 +127,14 @@ handleYelp = () => {
                 },
                 success: function(success) {
                   $.fn.fullpage.moveTo(2);
-                  $('.login').css('background-color', '#f26060');
-                  $('.login').css('color', 'white');
-                  $('.login').css('border', '0');
-                  $('.login').text('Logged In');
+                  $('.login').css('display', 'none');
+                  $('.logOut').css('display', 'block');
                   $('.accountLink').text($('.logInUsername').val());
                   $('.accountLink').css('display', 'inline-block');
                   $('.logInPage').slideUp('slow');
                   $('.username').val('');
                   $('.password').val('');
+                  $('.accountLink').unbind('click');
 
                   $.ajax({
                     type: 'POST',
@@ -292,8 +328,9 @@ handleYelp = () => {
       }
     });
   };
-  handleSignUp();
   handleLogIn();
+  handleLogOut();
+  handleSignUp();
   handlePriceChoice();
   handleLengthChoice();
   handleActivityChoice();

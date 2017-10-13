@@ -81,4 +81,28 @@ router.post('/current', function(req, res, next) {
   res.status(204).send();
 });
 
+router.get('/current', function(req, res, next) {
+  res.status(200).send(currentUser);
+});
+
+router.get('/current/agendas', function(req, res, next) {
+  let yourAgendas = {};
+  User.find({ username: currentUser }, function(err, docs) {
+    if (docs[0]['agendas']) {
+      console.log(docs);
+      console.log(docs[0]['agendas'].length);
+      yourAgendas.agendas = docs[0]['agendas'];
+      yourAgendas.amount = docs[0]['agendas'].length;
+      res.status(200).send(yourAgendas);
+    } else {
+      res.status(200).send('You have no agendas.');
+    }
+  });
+});
+
+router.get('/current/remove', function(res, res, next) {
+  currentUser = undefined;
+  res.status(200).send(currentUser);
+});
+
 module.exports = router;
