@@ -20,6 +20,7 @@ const client = yelp.client(token);
 let tempAgenda;
 let tempOptions;
 let currentUser;
+let savedAgenda;
 
 router.post('/', function(req, res, next) {
   console.log(req.body);
@@ -62,7 +63,15 @@ router.post('/agenda', function(req, res, next) {
 });
 
 router.get('/agenda', function(req, res, next) {
-  res.status(200).send(tempAgenda);
+  if (tempAgenda) {
+    res.status(200).send(tempAgenda);
+    console.log('mothafucked temp');
+  } else if (savedAgenda) {
+    res.status(200).send(savedAgenda);
+    console.log('mothafucked saved');
+  } else {
+    console.log('mothafucked nothing');
+  }
 });
 
 router.post('/options', function(req, res, next) {
@@ -100,9 +109,17 @@ router.get('/current/agendas', function(req, res, next) {
   });
 });
 
-router.get('/current/remove', function(res, res, next) {
+router.get('/current/remove', function(req, res, next) {
   currentUser = undefined;
   res.status(200).send(currentUser);
 });
 
+router.post('/saved', jsonParser, function(req, res, next) {
+  savedAgenda = req.body;
+  res.status(204).send();
+});
+
+router.get('/saved', function(req, res, next) {
+  res.status(201).send(savedAgenda);
+});
 module.exports = router;

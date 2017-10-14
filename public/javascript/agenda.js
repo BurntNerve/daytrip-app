@@ -2,6 +2,9 @@ handleAgendaPage = () => {
   const culture = '#56daff';
   const active = '#63ff82';
   const food = '#f26060';
+  const savedAgenda = false;
+
+  console.log('welcome to the agenda');
 
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -33,6 +36,7 @@ handleAgendaPage = () => {
     type: 'GET',
     url: '/data/options',
     success: function(options) {
+      console.log('here we goooo');
       const agendaOptions = {
         priceOfTrip: options.price,
         lengthOfTrip: Number(options.length),
@@ -54,7 +58,10 @@ handleAgendaPage = () => {
         limit: 10
       };
 
+      console.log(agendaOptions);
+
       renderInfo = () => {
+        console.log('rendering');
         $.ajax({
           type: 'GET',
           url: '/data/agenda',
@@ -398,6 +405,13 @@ handleAgendaPage = () => {
                     }, {});
 
                     agenda.info = agendaOptions;
+                    if (agendaOptions.activityOfTrip === 'Active Life') {
+                      agenda.info.name = 'The Active Scout';
+                    } else if (
+                      agendaOptions.activityOfTrip === 'Arts & Entertainment'
+                    ) {
+                      agenda.info.name = 'The Cultured Scout';
+                    }
 
                     console.log(agenda);
 
@@ -448,6 +462,7 @@ handleAgendaPage = () => {
                         }, {});
 
                         agenda.info = agendaOptions;
+                        agenda.info.name = 'The Balanced Scout';
 
                         console.log(agenda);
                         $.ajax({
@@ -501,6 +516,13 @@ handleAgendaPage = () => {
                     }, {});
 
                     agenda.info = agendaOptions;
+                    if (agendaOptions.activityOfTrip === 'Active Life') {
+                      agenda.info.name = 'The Active Pioneer';
+                    } else if (
+                      agendaOptions.activityOfTrip === 'Arts & Entertainment'
+                    ) {
+                      agenda.info.name = 'The Cultured Pioneer';
+                    }
 
                     console.log(agenda);
 
@@ -549,6 +571,7 @@ handleAgendaPage = () => {
                         }, {});
 
                         agenda.info = agendaOptions;
+                        agenda.info.name = 'The Balanced Pioneer';
                         $.ajax({
                           type: 'POST',
                           url: '/data/agenda',
@@ -599,7 +622,14 @@ handleAgendaPage = () => {
                       return acc;
                     }, {});
 
-                    agenda.options = agendaOptions;
+                    agenda.info = agendaOptions;
+                    if (agendaOptions.activityOfTrip === 'Active Life') {
+                      agenda.info.name = 'The Active Settler';
+                    } else if (
+                      agendaOptions.activityOfTrip === 'Arts & Entertainment'
+                    ) {
+                      agenda.info.name = 'The Cultured Settler';
+                    }
 
                     console.log(agenda);
 
@@ -653,7 +683,8 @@ handleAgendaPage = () => {
                           return acc;
                         }, {});
 
-                        agenda.options = agendaOptions;
+                        agenda.info = agendaOptions;
+                        agenda.info.name = 'The Balanced Settler';
 
                         $.ajax({
                           type: 'POST',
@@ -673,6 +704,10 @@ handleAgendaPage = () => {
         }
       };
       handleApiCalls();
+    },
+    error: function(res) {
+      console.log(res);
+      console.log('errored');
     }
   });
 };

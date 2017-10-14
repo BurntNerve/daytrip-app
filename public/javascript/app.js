@@ -12,12 +12,14 @@ handleYelp = () => {
         url: '/data/current/remove',
         success: function(response) {
           console.log('supposedly logged out!');
-          $('.logOut').addClass('login');
-          $('.login').removeClass('logOut');
+
           $('.accountLink').text('');
           $('.accountLink').css('display', 'none');
-          $('.login').text('Log In');
-          console.log('second');
+          $('.login').css('display', 'block');
+          $('.logOut').css('display', 'none');
+          $('.logInUsername').val('');
+          $('.logInPassword').val('');
+          handleSignUp();
         }
       });
     });
@@ -27,8 +29,6 @@ handleYelp = () => {
     type: 'GET',
     url: '/data/current',
     success: function(response) {
-      console.log(response);
-      console.log(response === '');
       if (response !== '') {
         console.log('pre logged in');
         $('.accountLink').text(response);
@@ -37,9 +37,7 @@ handleYelp = () => {
         $('.logOut').css('display', 'block');
 
         handleLogOut();
-      } /*else {
-        handleLogIn();
-      }*/
+      }
     }
   });
 
@@ -82,7 +80,7 @@ handleYelp = () => {
 
               $.ajax({
                 type: 'POST',
-                url: '/current',
+                url: 'data/current',
                 data: {
                   currentUser: $('.accountLink').text()
                 }
@@ -132,8 +130,6 @@ handleYelp = () => {
                   $('.accountLink').text($('.logInUsername').val());
                   $('.accountLink').css('display', 'inline-block');
                   $('.logInPage').slideUp('slow');
-                  $('.username').val('');
-                  $('.password').val('');
                   $('.accountLink').unbind('click');
 
                   $.ajax({
