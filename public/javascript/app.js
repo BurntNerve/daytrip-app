@@ -17,6 +17,10 @@ handleYelp = () => {
           $('.accountLink').css('display', 'none');
           $('.login').css('display', 'block');
           $('.logOut').css('display', 'none');
+          $('.signUp').css('background-color', 'white');
+          $('.signUp').css('color', '#333');
+          $('.signUp').css('border', '1.5px solid #333');
+          $('.signUp').text('Sign Up');
           $('.logInUsername').val('');
           $('.logInPassword').val('');
           handleSignUp();
@@ -65,7 +69,8 @@ handleYelp = () => {
             success: function(response) {
               console.log(response);
               $.fn.fullpage.moveTo(2);
-
+              $('.login').css('display', 'none');
+              $('.logOut').css('display', 'block');
               $('.signUp').css('background-color', '#2fd3ff');
               $('.signUp').css('color', 'white');
               $('.signUp').css('border', '0');

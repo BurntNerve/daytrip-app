@@ -29,10 +29,28 @@ handleSaveLoad = () => {
       type: 'GET',
       url: '/data/saved',
       success: function(tempAgenda) {
+        $('.agendaTitle').text(tempAgenda.info.name);
+        handleSaveChanges = () => {
+          $('.saveChanges').on('click', function() {
+            const changes = {
+              id: tempAgenda.info.id,
+              title: $('.agendaTitle').text()
+            };
+            $.ajax({
+              type: 'POST',
+              url: '/data/saved/changes',
+              data: changes,
+              success: function(res) {
+                console.log(res);
+              }
+            });
+          });
+        };
+        handleSaveChanges();
         console.log(tempAgenda);
         agendaOptions = tempAgenda.info;
+
         if (agendaOptions.lengthOfTrip >= 3) {
-          $('.agendaTitle').text('Scout');
           $('.scoutItem').css('display', 'block');
 
           $('.itemNameOne').text(tempAgenda['0'].name);
@@ -116,19 +134,16 @@ handleSaveLoad = () => {
           $('.itemTwoNoPicture h2').css('color', food);
 
           if (agendaOptions.activityOfTrip === 'Arts & Entertainment') {
-            $('.agendaTitle').text('The Cultured Scout');
             $('.itemOne').css('background-color', culture);
             $('.itemOneNoPicture h2').css('color', culture);
             $('.itemThree').css('background-color', culture);
             $('.itemThreeNoPicture h2').css('color', culture);
           } else if (agendaOptions.activityOfTrip === 'Active Life') {
-            $('.agendaTitle').text('The Active Scout');
             $('.itemOne').css('background-color', active);
             $('.itemOneNoPicture h2').css('color', active);
             $('.itemThree').css('background-color', active);
             $('.itemThreeNoPicture h2').css('color', active);
           } else if (agendaOptions.activityOfTrip === 'Balance') {
-            $('.agendaTitle').text('The Balanced Scout');
             $('.itemOne').css('background-color', active);
             $('.itemOneNoPicture h2').css('color', active);
             $('.itemThree').css('background-color', culture);
@@ -194,7 +209,6 @@ handleSaveLoad = () => {
             $('.itemFiveNoPicture h2').css('color', food);
 
             if (agendaOptions.activityOfTrip === 'Arts & Entertainment') {
-              $('.agendaTitle').text('The Cultured Pioneer');
               $('.itemOne').css('background-color', culture);
               $('.itemOneNoPicture h2').css('color', culture);
               $('.itemThree').css('background-color', culture);
@@ -202,7 +216,6 @@ handleSaveLoad = () => {
               $('.itemFour').css('background-color', culture);
               $('.itemFourNoPicture h2').css('color', culture);
             } else if (agendaOptions.activityOfTrip === 'Active Life') {
-              $('.agendaTitle').text('The Active Pioneer');
               $('.itemOne').css('background-color', active);
               $('.itemOneNoPicture').css('color', active);
               $('.itemThree').css('background-color', active);
@@ -210,7 +223,6 @@ handleSaveLoad = () => {
               $('.itemFour').css('background-color', active);
               $('.itemFourNoPicture h2').css('color', active);
             } else if (agendaOptions.activityOfTrip === 'Balance') {
-              $('.agendaTitle').text('The Balanced Pioneer');
               $('.itemOne').css('background-color', active);
               $('.itemOneNoPicture h2').css('color', active);
               $('.itemThree').css('background-color', culture);
@@ -282,7 +294,6 @@ handleSaveLoad = () => {
               $('.itemSevenNoPicture h2').css('color', food);
 
               if (agendaOptions.activityOfTrip === 'Arts & Entertainment') {
-                $('.agendaTitle').text('The Cultured Settler');
                 $('.itemTwo').css('background-color', culture);
                 $('.itemTwoNoPicture h2').css('color', culture);
                 $('.itemThree').css('background-color', culture);
@@ -292,7 +303,6 @@ handleSaveLoad = () => {
                 $('.itemSix').css('background-color', culture);
                 $('.itemSixNoPicture h2').css('color', culture);
               } else if (agendaOptions.activityOfTrip === 'Active Life') {
-                $('.agendaTitle').text('The Active Settler');
                 $('.itemTwo').css('background-color', active);
                 $('.itemTwoNoPicture h2').css('color', active);
                 $('.itemThree').css('background-color', active);
@@ -302,7 +312,6 @@ handleSaveLoad = () => {
                 $('.itemSix').css('background-color', active);
                 $('.itemSixNoPicture h2').css('color', active);
               } else if (agendaOptions.activityOfTrip === 'Balance') {
-                $('.agendaTitle').text('The Balanced Settler');
                 $('.itemTwo').css('background-color', active);
                 $('.itemTwoNoPicture h2').css('color', active);
                 $('.itemThree').css('background-color', active);

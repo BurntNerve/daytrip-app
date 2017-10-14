@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const yelp = require('yelp-fusion');
 const jsonParser = require('body-parser').json();
 const passport = require('passport');
+const uuid = require('uuid');
 
 const { User } = require('../Users/models.js');
 
@@ -45,6 +46,7 @@ router.post('/agenda', function(req, res, next) {
   const query = { username: currentUser };
   const options = { new: true };
   if (currentUser) {
+    tempAgenda.info.id = uuid();
     User.findOneAndUpdate(
       query,
       { $push: { agendas: tempAgenda } },
@@ -66,12 +68,12 @@ router.get('/agenda', function(req, res, next) {
   if (tempAgenda) {
     res.status(200).send(tempAgenda);
     console.log('mothafucked temp');
-  } else if (savedAgenda) {
+  } /*else if (savedAgenda) {
     res.status(200).send(savedAgenda);
     console.log('mothafucked saved');
   } else {
     console.log('mothafucked nothing');
-  }
+  }*/
 });
 
 router.post('/options', function(req, res, next) {
@@ -121,5 +123,26 @@ router.post('/saved', jsonParser, function(req, res, next) {
 
 router.get('/saved', function(req, res, next) {
   res.status(201).send(savedAgenda);
+});
+
+router.post('/saved/changes', function(req, res, next) {
+  console.log(req.body);
+  const query = { username: currentUser };
+  User.findOne(query, function(err, docs) {
+    let updatedAgenda;
+    console.log(docs.agendas);
+    for (let i = 0; i < docs.agendas.length; i++) {
+      if (docs.agendas[i].info.id === req.body.id) {
+        docs.agendas[i].info.name = req.body.title;
+        updatedAgenda = docs.agendas;
+      }
+    }
+    User.findOneAndUpdate(query, { agendas: updatedAgenda }, function(
+      err,
+      docs
+    ) {
+      console.log(docs);
+    });
+  });
 });
 module.exports = router;

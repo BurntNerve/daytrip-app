@@ -18,7 +18,7 @@ handleAccountPage = () => {
 
       for (let i = 0; i < counter; i++) {
         let AGENDA_CARD = `
-          <h2 class="itemTitle">Agenda #${referenceCount}</h2>
+          <h2 class="itemTitle">${res.agendas[referenceCount].info.name}</h2>
           <div class="agendaCard item">
           <div class="pictureDisplay">
             <img src="" alt="" class="picture">
@@ -27,7 +27,6 @@ handleAccountPage = () => {
             </div>
           </div>
           <div class="itemInfo">
-            <h2 class="item${referenceCount}Name"></h2>
             <h3 class="itemPriceRange">${res.agendas[referenceCount].info
               .priceOfTrip}</h3>
             <h4 class="itemActivity">${res.agendas[referenceCount].info
