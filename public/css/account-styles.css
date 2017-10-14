@@ -80,9 +80,18 @@ a {
   border-radius: 5px;
   border: solid 1.5px #333;
   padding-left: 2.5%;
+  padding-top: 2.5%;
   width: 80vw;
   display: block;
   margin: 0 auto;
+  font-weight: 800;
+  padding-right: 2.5%;
+}
+
+.agendaCard p {
+  background-color: white;
+  padding: 2.5%;
+  border-radius: 5px;
 }
 
 .itemTitle {
@@ -95,4 +104,42 @@ a {
 
 .empty {
   text-align: center;
+}
+
+.first {
+  background-color: #2fd3ff;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
+}
+
+.second {
+  background-color: #ffe74c;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
+}
+
+.third {
+  background-color: #f26060;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
+}
+
+.firstDominant {
+  background-color: #2fd3ff !important;
+  border: 0 !important;
+}
+
+.secondDominant {
+  background-color: #ffe74c !important;
+  border: 0 !important;
+}
+
+.thirdDominant {
+  background-color: #f26060 !important;
+  border: 0 !important;
+}
+
+.equal {
+  background-color: #63ff82 !important;
+  border: 0 !important;
 }

@@ -16,30 +16,95 @@ handleAccountPage = () => {
         );
       }
 
+      let first = 0;
+      let second = 0;
+      let third = 0;
+
       for (let i = 0; i < counter; i++) {
+        let spending;
+        let events;
+        if (res.agendas[referenceCount].info.priceOfTrip === '1, 2') {
+          spending = '<span class="first">save</span> some money. ';
+          first += 1;
+        } else if (res.agendas[referenceCount].info.priceOfTrip === '2, 3') {
+          spending = '<span class="second">spend</span> a little money. ';
+          second += 1;
+        } else if (res.agendas[referenceCount].info.priceOfTrip === '3, 4') {
+          spending = '<span class="third">splurge</span> and treat yourself, ';
+          third += 1;
+        }
+
+        if (res.agendas[referenceCount].info.lengthOfTrip === '3') {
+          if (res.agendas[referenceCount].info.priceOfTrip === '1, 2') {
+            events =
+              'Considering you only went to <span class=first>3 locations</span>, you probably saved a good bit of cash!';
+            first += 1;
+          } else if (res.agendas[referenceCount].info.priceOfTrip === '2, 3') {
+            events =
+              'You ended up going to <span class="first">3 locations</span>, which likely balanced well with your spending.';
+            first += 1;
+          } else if (res.agendas[referenceCount].info.priceOfTrip === '3, 4') {
+            events =
+              'which was a great pairing with only <span class="first">3 locations</span>.';
+            first += 1;
+          }
+        } else if (res.agendas[referenceCount].info.lengthOfTrip === '5') {
+          if (res.agendas[referenceCount].info.priceOfTrip === '1, 2') {
+            events =
+              'This decision likely allowed you to do a little more at the <span class="second">5 locations</span> you visited.';
+            second += 1;
+          } else if (res.agendas[referenceCount].info.priceOfTrip === '2, 3') {
+            events =
+              'You also decided to go to <span class="second">5 locations</span>, meaning you really decided to spend!';
+            second += 1;
+          } else if (res.agendas[referenceCount].info.priceOfTrip === '3, 4') {
+            events =
+              'and you must have, considering you to <span class="second">5 locations</span>!';
+            second += 1;
+          }
+        } else if (res.agendas[referenceCount].info.lengthOfTrip === '7') {
+          if (res.agendas[referenceCount].info.priceOfTrip === '1, 2') {
+            events =
+              'I can only assume you knew what you were getting into though, you went to <span class="third">7 locations</span>!';
+            third += 1;
+          } else if (res.agendas[referenceCount].info.priceOfTrip === '2, 3') {
+            events =
+              'Which means you must <em>have</em> a little money considering you went to <span class="third">7 locations</span>.';
+            third += 1;
+          } else if (res.agendas[referenceCount].info.priceOfTrip === '3, 4') {
+            events =
+              'Which makes you royalty considering you went to <span class="third">7 different locations</span>';
+            third += 1;
+          }
+        }
         let AGENDA_CARD = `
           <h2 class="itemTitle">${res.agendas[referenceCount].info.name}</h2>
-          <div class="agendaCard item">
-          <div class="pictureDisplay">
-            <img src="" alt="" class="picture">
-            <div class="itemOneNoPicture noPicture">
-
-            </div>
-          </div>
-          <div class="itemInfo">
-            <h3 class="itemPriceRange">${res.agendas[referenceCount].info
-              .priceOfTrip}</h3>
-            <h4 class="itemActivity">${res.agendas[referenceCount].info
-              .activityOfTrip}</h4>
-            <h4 class="itemLength">${res.agendas[referenceCount].info
-              .lengthOfTrip}</h4>
-            <h4 class="itemOneThirdAddress itemAddress"></h4>
-            <h4 class="itemOnePhone itemPhone"></h4>
-            <h4 class="itemOneOpen itemOpen"></h4>
+          <div class="agendaCard item${referenceCount}">
+            <div class="itemInfo">
+            <p>On this trip, you decided to ${spending}${events}</p>
             <p class="tag">${referenceCount}</p>
-          </div>
-        </div>`;
+            </div>
+          </div>`;
         $('.agendaContainer').append(AGENDA_CARD);
+        console.log(first);
+        console.log(second);
+        console.log(third);
+        if (first > second && first > third) {
+          $(`.item${referenceCount}`).addClass('firstDominant');
+          console.log('first wins');
+        } else if (second > first && second > third) {
+          $(`.item${referenceCount}`).addClass('secondDominant');
+          console.log('second wins');
+        } else if (third > first && third > second) {
+          $(`.item${referenceCount}`).addClass('thirdDominant');
+          console.log('third wins!');
+        } else if (first === second || first == third || second == third) {
+          $(`.item${referenceCount}`).addClass('equal');
+          console.log('first and second tie!');
+        }
+        first = 0;
+        second = 0;
+        third = 0;
         referenceCount += 1;
       }
 
