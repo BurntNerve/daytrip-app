@@ -67,13 +67,7 @@ router.post('/agenda', function(req, res, next) {
 router.get('/agenda', function(req, res, next) {
   if (tempAgenda) {
     res.status(200).send(tempAgenda);
-    console.log('mothafucked temp');
-  } /*else if (savedAgenda) {
-    res.status(200).send(savedAgenda);
-    console.log('mothafucked saved');
-  } else {
-    console.log('mothafucked nothing');
-  }*/
+  }
 });
 
 router.post('/options', function(req, res, next) {
@@ -142,6 +136,33 @@ router.post('/saved/changes', function(req, res, next) {
       docs
     ) {
       console.log(docs);
+    });
+  });
+  res.status(204).send();
+});
+
+router.post('/saved/delete', function(req, res, next) {
+  console.log(req.body);
+  res.status(204).send();
+  const query = { username: currentUser };
+  User.findOne(query, function(err, docs) {
+    let updatedAgenda;
+    console.log('original');
+    console.log(docs.agendas.length);
+    for (let i = 0; i < docs.agendas.length; i++) {
+      if (docs.agendas[i].info.id === req.body.id) {
+        docs.agendas.splice(i, 1);
+        updatedAgenda = docs.agendas;
+        console.log('edited');
+        console.log(updatedAgenda.length);
+      }
+    }
+    User.findOneAndUpdate(query, { agendas: updatedAgenda }, function(
+      err,
+      docs
+    ) {
+      console.log('updated');
+      console.log(docs.agendas.length);
     });
   });
 });

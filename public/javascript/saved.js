@@ -47,6 +47,21 @@ handleSaveLoad = () => {
           });
         };
         handleSaveChanges();
+        handleDelete = () => {
+          $('.deleteAgenda').on('click', function() {
+            console.log('deleting');
+            $.ajax({
+              type: 'POST',
+              url: '/data/saved/delete',
+              data: { id: tempAgenda.info.id },
+              success: function(res) {
+                console.log(res);
+                location.assign('../html/account.html');
+              }
+            });
+          });
+        };
+        handleDelete();
         console.log(tempAgenda);
         agendaOptions = tempAgenda.info;
 

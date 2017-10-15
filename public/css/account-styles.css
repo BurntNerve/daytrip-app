@@ -76,22 +76,20 @@ a {
 }
 
 .agendaCard {
-  height: 35vh;
   border-radius: 5px;
   border: solid 1.5px #333;
-  padding-left: 2.5%;
-  padding-top: 2.5%;
+  padding: 5%;
   width: 80vw;
   display: block;
   margin: 0 auto;
   font-weight: 800;
-  padding-right: 2.5%;
 }
 
 .agendaCard p {
   background-color: white;
   padding: 2.5%;
   border-radius: 5px;
+  margin: 0;
 }
 
 .itemTitle {

@@ -23,6 +23,7 @@ handleAccountPage = () => {
       for (let i = 0; i < counter; i++) {
         let spending;
         let events;
+        let activity;
         if (res.agendas[referenceCount].info.priceOfTrip === '1, 2') {
           spending = '<span class="first">save</span> some money. ';
           first += 1;
@@ -77,11 +78,30 @@ handleAccountPage = () => {
             third += 1;
           }
         }
+
+        if (res.agendas[referenceCount].info.activityOfTrip === 'Balance') {
+          activity =
+            'You chose to pursue a <span class="third">Balance</span> of activities, combining both active life and culture.';
+          third += 1;
+        } else if (
+          res.agendas[referenceCount].info.activityOfTrip === 'Active Life'
+        ) {
+          activity =
+            'You chose to partcipate in <span class="second">active</span> events which range from activities that take place outdoors to ones that just get you moving.';
+          second += 1;
+        } else if (
+          res.agendas[referenceCount].info.activityOfTrip ===
+          'Arts & Entertainment'
+        ) {
+          activity =
+            'For activites, you decided to pursue <span class="first">cultured</span> events. This could range from concerts or movies to local events like haunted houses or escape rooms.';
+          first += 1;
+        }
         let AGENDA_CARD = `
           <h2 class="itemTitle">${res.agendas[referenceCount].info.name}</h2>
           <div class="agendaCard item${referenceCount}">
             <div class="itemInfo">
-            <p>On this trip, you decided to ${spending}${events}</p>
+            <p>On this trip, you decided to ${spending} ${events} ${activity}</p>
             <p class="tag">${referenceCount}</p>
             </div>
           </div>`;
