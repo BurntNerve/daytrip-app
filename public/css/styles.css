@@ -509,3 +509,196 @@ button {
   margin-bottom: 5% !important;
   padding-top: 0 !important;
 }
+
+@media only screen and (width: 320px) and (height: 568px) {
+  .definition {
+    font-size: 1em;
+  }
+
+  .signUp {
+    bottom: 5%;
+  }
+
+  .login {
+    bottom: 5%;
+  }
+
+  .logOut {
+    bottom: 5%;
+  }
+
+  .choosePrice h1,
+  .chooseLength h1,
+  .chooseActivity h1,
+  .chooseLocation h1 {
+    font-size: 2.6em;
+  }
+
+  .choice {
+    font-size: 0.85em;
+  }
+
+  .choiceHeader {
+    font-size: 3em !important;
+  }
+
+  .pageTitle {
+  }
+
+  .locationSearch {
+    font-size: 1.3em;
+  }
+
+  .signUpConfirm {
+    margin-top: 3.5vh;
+  }
+}
+
+@media only screen and (width: 360px) and (height: 640px) {
+  .signUp,
+  .login,
+  .logOut {
+    bottom: 5%;
+  }
+
+  .locationSearch {
+    font-size: 1.3em;
+  }
+}
+
+@media only screen and (max-width: 412px) and (max-height: 732px) {
+  .signUp,
+  .login,
+  .logOut {
+    bottom: 5%;
+  }
+  .choosePrice h1,
+  .chooseLength h1,
+  .chooseActivity h1,
+  .chooseLocation h1 {
+    font-size: 2.7em;
+  }
+
+  .choiceHeader {
+    font-size: 3em !important;
+  }
+}
+
+@media only screen and (max-width: 414px) and (max-height: 736px) {
+  .signUp,
+  .login,
+  .logOut {
+    bottom: 5%;
+  }
+}
+
+@media only screen and (min-width: 728px) and (min-height: 1024px) {
+  .signUp,
+  .login,
+  .logOut {
+    bottom: 5%;
+    width: 25%;
+  }
+
+  .definition {
+    font-size: 2em;
+  }
+
+  .icon {
+    height: 4.5em;
+    width: 4.5em;
+  }
+
+  .choosePrice h1,
+  .chooseLength h1,
+  .chooseActivity h1,
+  .chooseLocation h1 {
+    font-size: 3.5em;
+  }
+
+  .choice {
+    width: 65vw;
+  }
+
+  .choiceDescription {
+    font-size: 1.3em;
+  }
+
+  .choiceHeader {
+    font-size: 5em !important;
+    padding-top: 2.5% !important;
+  }
+
+  .locationSearch {
+    font-size: 2em;
+  }
+
+  .confirm {
+    font-size: 2em;
+  }
+
+  .planTrip {
+    width: 6em;
+    height: 3.75em;
+  }
+
+  .wordName {
+    margin-top: 5%;
+  }
+}
+
+@media only screen and (width: 1024px) and (height: 1366px) {
+  .logo {
+    font-size: 2.5em;
+  }
+  .definition {
+    font-size: 2.5em;
+  }
+
+  .icon {
+    height: 5.5em;
+    width: 5.5em;
+  }
+
+  .choiceHeader {
+    font-size: 5.7em !important;
+    padding-top: 2.5% !important;
+  }
+
+  .choiceDescription {
+    font-size: 2em;
+  }
+
+  .choice {
+    width: 55vw;
+  }
+
+  .choosePrice h1,
+  .chooseLength h1,
+  .chooseActivity h1,
+  .chooseLocation h1 {
+    font-size: 4.5em;
+  }
+
+  .locationSearch {
+    font-size: 3em;
+  }
+
+  .signUpContainer h2 {
+    font-size: 2.5em;
+  }
+
+  .signUpTitle {
+    font-size: 3.5em;
+  }
+
+  .accountLink {
+    font-size: 2em;
+  }
+
+  .planTrip {
+    width: 8em;
+    height: 5em;
+    font-size: 2.3em;
+  }
+}
