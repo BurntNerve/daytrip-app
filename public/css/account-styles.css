@@ -141,3 +141,59 @@ a {
   background-color: #63ff82 !important;
   border: 0 !important;
 }
+
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+  .agendaCard {
+    font-size: 1.2em;
+    width: 50vw;
+  }
+}
+
+@media only screen and (width: 1024px) and (height: 1366px) {
+  .logo {
+    font-size: 2em;
+  }
+
+  .accountLink {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .agendaCard {
+    width: 27vw;
+  }
+
+  .logo {
+    font-size: 2em;
+  }
+
+  .accountLink {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .agendaCard {
+    width: 27vw;
+    font-size: 2em;
+  }
+
+  .title {
+    font-size: 5em;
+  }
+
+  .itemTitle {
+    font-size: 3em;
+  }
+
+  .logo {
+    font-size: 2em;
+    padding-top: 1%;
+  }
+
+  .accountLink {
+    font-size: 1.5em;
+    padding-top: 1%;
+  }
+}

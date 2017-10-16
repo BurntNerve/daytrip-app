@@ -202,3 +202,53 @@ a {
   margin-top: 2.5%;
   color: white;
 }
+
+@media only screen and (min-width: 768px) and (min-height: 1024px) {
+  .agendaItem {
+    width: 70vw;
+  }
+
+  .itemInfo {
+    font-size: 1.35em;
+  }
+}
+
+@media only screen and (width: 1024px) and (height: 1366px) {
+  .saveChanges,
+  .deleteAgenda {
+    font-size: 2em;
+  }
+
+  .itemInfo {
+    font-size: 1.5em;
+  }
+
+  .logo {
+    font-size: 2em;
+  }
+
+  .accountLink {
+    font-size: 1.8em;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .saveChanges,
+  .deleteAgenda {
+    font-size: 2em;
+  }
+
+  .logo {
+    font-size: 2em;
+    padding-top: 1%;
+  }
+
+  .accountLink {
+    font-size: 1.8em;
+    padding-top: 1%;
+  }
+
+  .agendaItem {
+    width: 30vw;
+  }
+}
