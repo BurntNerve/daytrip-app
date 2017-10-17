@@ -1,11 +1,15 @@
 handleAccountPage = () => {
   console.log('loaded!');
+  console.log(localStorage.getItem('username'));
 
   referenceCount = 0;
 
   $.ajax({
-    type: 'GET',
+    type: 'POST',
     url: '/data/current/agendas',
+    data: {
+      username: localStorage.getItem('username')
+    },
     success: function(res) {
       console.log(res);
       const counter = res.amount;

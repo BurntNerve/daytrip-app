@@ -34,7 +34,8 @@ handleSaveLoad = () => {
           $('.saveChanges').on('click', function() {
             const changes = {
               id: tempAgenda.info.id,
-              title: $('.agendaTitle').text()
+              title: $('.agendaTitle').text(),
+              user: localStorage.getItem('username')
             };
             $.ajax({
               type: 'POST',
@@ -53,7 +54,10 @@ handleSaveLoad = () => {
             $.ajax({
               type: 'POST',
               url: '/data/saved/delete',
-              data: { id: tempAgenda.info.id },
+              data: {
+                id: tempAgenda.info.id,
+                user: localStorage.getItem('username')
+              },
               success: function(res) {
                 console.log(res);
                 location.assign('../html/account.html');

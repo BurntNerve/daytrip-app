@@ -53,7 +53,7 @@ router.post('/', jsonParser, (req, res) => {
       min: 1
     },
     password: {
-      min: 10,
+      min: 1,
       max: 72
     }
   };
@@ -99,7 +99,7 @@ router.post('/', jsonParser, (req, res) => {
     })
     .then(hash => {
       return User.create({
-        username,
+        username: username,
         password: hash
       });
     })
@@ -110,10 +110,11 @@ router.post('/', jsonParser, (req, res) => {
       if (err.reason === 'ValidationError') {
         return res.status(err.code).json(err);
       }
-      res.status(500).json({
+      console.log(err);
+      /*res.status(500).json({
         code: 500,
         message: 'Internal server error'
-      });
+      });*/
     });
 });
 

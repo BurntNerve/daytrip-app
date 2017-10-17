@@ -43,19 +43,19 @@ router.post('/', function(req, res, next) {
 router.post('/agenda', function(req, res, next) {
   console.log('recieved!');
   tempAgenda = req.body;
-  const query = { username: currentUser };
-  const options = { new: true };
-  if (currentUser) {
+  console.log(req.body.info.user);
+  if (req.body.info.user !== null && req.body.info.user !== '') {
+    console.log('tripped');
+    const query = { username: req.body.info.user };
+    const options = { new: true };
     tempAgenda.info.id = uuid();
     User.findOneAndUpdate(
       query,
       { $push: { agendas: tempAgenda } },
       options,
-      function(err, docs) {
-        console.log(docs);
-      }
+      function(err, docs) {}
     );
-    User.find({ username: currentUser }, function(err, docs) {
+    User.find({ username: req.body.info.user }, function(err, docs) {
       console.log(docs);
       console.log(docs[0]['agendas'].length);
     });
@@ -80,19 +80,10 @@ router.get('/options', function(req, res, next) {
   res.status(200).json(tempOptions);
 });
 
-router.post('/current', function(req, res, next) {
-  currentUser = req.body.currentUser;
-  console.log(currentUser);
-  res.status(204).send();
-});
-
-router.get('/current', function(req, res, next) {
-  res.status(200).send(currentUser);
-});
-
-router.get('/current/agendas', function(req, res, next) {
+router.post('/current/agendas', function(req, res, next) {
   let yourAgendas = {};
-  User.find({ username: currentUser }, function(err, docs) {
+  console.log(req.body.username);
+  User.find({ username: req.body.username }, function(err, docs) {
     if (docs[0]['agendas']) {
       console.log(docs);
       console.log(docs[0]['agendas'].length);
@@ -103,11 +94,6 @@ router.get('/current/agendas', function(req, res, next) {
       res.status(200).send('You have no agendas.');
     }
   });
-});
-
-router.get('/current/remove', function(req, res, next) {
-  currentUser = undefined;
-  res.status(200).send(currentUser);
 });
 
 router.post('/saved', jsonParser, function(req, res, next) {
@@ -121,7 +107,7 @@ router.get('/saved', function(req, res, next) {
 
 router.post('/saved/changes', function(req, res, next) {
   console.log(req.body);
-  const query = { username: currentUser };
+  const query = { username: req.body.user };
   User.findOne(query, function(err, docs) {
     let updatedAgenda;
     console.log(docs.agendas);
@@ -144,7 +130,7 @@ router.post('/saved/changes', function(req, res, next) {
 router.post('/saved/delete', function(req, res, next) {
   console.log(req.body);
   res.status(204).send();
-  const query = { username: currentUser };
+  const query = { username: req.body.user };
   User.findOne(query, function(err, docs) {
     let updatedAgenda;
     console.log('original');

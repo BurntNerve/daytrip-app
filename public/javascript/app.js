@@ -5,45 +5,40 @@ handleYelp = () => {
   let locationOfTrip;
   let loggedOut;
 
+  console.log(localStorage);
+  console.log(localStorage.getItem('username'));
+
   handleLogOut = () => {
     $('.logOut').on('click', function() {
-      $.ajax({
-        type: 'GET',
-        url: '/data/current/remove',
-        success: function(response) {
-          console.log('supposedly logged out!');
+      localStorage.removeItem('username');
+      localStorage.removeItem('token');
 
-          $('.accountLink').text('');
-          $('.accountLink').css('display', 'none');
-          $('.login').css('display', 'block');
-          $('.logOut').css('display', 'none');
-          $('.signUp').css('background-color', 'white');
-          $('.signUp').css('color', '#333');
-          $('.signUp').css('border', '1.5px solid #333');
-          $('.signUp').text('Sign Up');
-          $('.logInUsername').val('');
-          $('.logInPassword').val('');
-          handleSignUp();
-        }
-      });
+      console.log(localStorage);
+      console.log('supposedly logged out!');
+
+      $('.accountLink').text('');
+      $('.accountLink').css('display', 'none');
+      $('.login').css('display', 'block');
+      $('.logOut').css('display', 'none');
+      $('.signUp').css('background-color', 'white');
+      $('.signUp').css('color', '#333');
+      $('.signUp').css('border', '1.5px solid #333');
+      $('.signUp').text('Sign Up');
+      $('.logInUsername').val('');
+      $('.logInPassword').val('');
+      handleSignUp();
     });
   };
 
-  $.ajax({
-    type: 'GET',
-    url: '/data/current',
-    success: function(response) {
-      if (response !== '') {
-        console.log('pre logged in');
-        $('.accountLink').text(response);
-        $('.accountLink').css('display', 'inline-block');
-        $('.login').css('display', 'none');
-        $('.logOut').css('display', 'block');
+  if (localStorage.getItem('username') !== null) {
+    console.log('pre logged in');
+    $('.accountLink').text(localStorage.getItem('username'));
+    $('.accountLink').css('display', 'inline-block');
+    $('.login').css('display', 'none');
+    $('.logOut').css('display', 'block');
 
-        handleLogOut();
-      }
-    }
-  });
+    handleLogOut();
+  }
 
   handleSignUp = () => {
     $('.signUp').on('click', function() {
@@ -69,6 +64,8 @@ handleYelp = () => {
             success: function(response) {
               console.log(response);
               $.fn.fullpage.moveTo(2);
+              localStorage.setItem('username', $('.username').val());
+              console.log(localStorage.getItem('username'));
               $('.login').css('display', 'none');
               $('.logOut').css('display', 'block');
               $('.signUp').css('background-color', '#2fd3ff');
@@ -82,17 +79,10 @@ handleYelp = () => {
               $('.password').val('');
               $('.confirmPassword').val('');
               $('.accountLink').unbind('click');
-
-              $.ajax({
-                type: 'POST',
-                url: 'data/current',
-                data: {
-                  currentUser: $('.accountLink').text()
-                }
-              });
             },
-            error: function(err) {
-              console.log(err);
+            error: function(res) {
+              console.log(res);
+              console.log(res.responseJSON);
             }
           });
         }
@@ -122,6 +112,10 @@ handleYelp = () => {
             },
             success: function(response) {
               const AuthToken = response.authToken;
+              localStorage.setItem('token', AuthToken);
+              localStorage.setItem('username', $('.logInUsername').val());
+              console.log(localStorage.getItem('token'));
+              console.log(localStorage.getItem('username'));
               $.ajax({
                 type: 'POST',
                 url: '/auth/refresh',
@@ -136,14 +130,6 @@ handleYelp = () => {
                   $('.accountLink').css('display', 'inline-block');
                   $('.logInPage').slideUp('slow');
                   $('.accountLink').unbind('click');
-
-                  $.ajax({
-                    type: 'POST',
-                    url: '/data/current',
-                    data: {
-                      currentUser: $('.accountLink').text()
-                    }
-                  });
                 },
                 error: function(err) {
                   console.log(err);

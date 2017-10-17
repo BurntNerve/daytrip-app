@@ -413,6 +413,10 @@ handleAgendaPage = () => {
                       agenda.info.name = 'The Cultured Scout';
                     }
 
+                    agenda.info.user = localStorage.getItem('username');
+
+                    console.log(localStorage.getItem('username'));
+
                     console.log(agenda);
 
                     $.ajax({
@@ -463,6 +467,7 @@ handleAgendaPage = () => {
 
                         agenda.info = agendaOptions;
                         agenda.info.name = 'The Balanced Scout';
+                        agenda.info.user = localStorage.getItem('username');
 
                         console.log(agenda);
                         $.ajax({
@@ -523,6 +528,7 @@ handleAgendaPage = () => {
                     ) {
                       agenda.info.name = 'The Cultured Pioneer';
                     }
+                    agenda.info.user = localStorage.getItem('username');
 
                     console.log(agenda);
 
@@ -572,6 +578,7 @@ handleAgendaPage = () => {
 
                         agenda.info = agendaOptions;
                         agenda.info.name = 'The Balanced Pioneer';
+                        agenda.info.user = localStorage.getItem('username');
                         $.ajax({
                           type: 'POST',
                           url: '/data/agenda',
@@ -630,6 +637,7 @@ handleAgendaPage = () => {
                     ) {
                       agenda.info.name = 'The Cultured Settler';
                     }
+                    agenda.info.user = localStorage.getItem('username');
 
                     console.log(agenda);
 
@@ -685,6 +693,7 @@ handleAgendaPage = () => {
 
                         agenda.info = agendaOptions;
                         agenda.info.name = 'The Balanced Settler';
+                        agenda.info.user = localStorage.getItem('username');
 
                         $.ajax({
                           type: 'POST',
