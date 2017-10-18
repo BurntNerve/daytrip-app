@@ -5,6 +5,7 @@ handleYelp = () => {
   let locationOfTrip;
   let loggedOut;
 
+  //Function with event listener for when user clicks 'Log Out' button.
   handleLogOut = () => {
     $('.logOut').on('click', function() {
       localStorage.removeItem('username');
@@ -24,6 +25,7 @@ handleYelp = () => {
     });
   };
 
+  //Coniditional loop to keep user logged in if they leave the page and haven't logged out.
   if (localStorage.getItem('username') !== null) {
     $('.accountLink').text(localStorage.getItem('username'));
     $('.accountLink').css('display', 'inline-block');
@@ -33,6 +35,7 @@ handleYelp = () => {
     handleLogOut();
   }
 
+  //Function with event listener for when user clicks 'Sign Up' button.
   handleSignUp = () => {
     $('.signUp').on('click', function() {
       $('.signUpPage').slideDown('slow');
@@ -77,6 +80,7 @@ handleYelp = () => {
     });
   };
 
+  //Function with event listener for when user clicks 'Log In' button.
   handleLogIn = () => {
     $('.login').on('click', function() {
       $('.logInPage').slideDown('slow');
@@ -134,6 +138,7 @@ handleYelp = () => {
     $.fn.fullpage.moveTo(2);
   });
 
+  // Function used when user clicks 'Get Current Location' option.
   function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
@@ -161,6 +166,7 @@ handleYelp = () => {
     });
   }
 
+  //Function with event listener that assigns user's choice to 'priceOfTrip' variable for later use.
   handlePriceChoice = () => {
     $('.js-priceChoice').on('click', function(event) {
       $.fn.fullpage.moveTo(3);
@@ -179,6 +185,7 @@ handleYelp = () => {
     });
   };
 
+  //Function with event listener that assigns user's choice to 'lengthOfTrip' variable for later use.
   handleLengthChoice = () => {
     $('.js-lengthChoice').on('click', function(event) {
       $.fn.fullpage.moveTo(4);
@@ -197,6 +204,7 @@ handleYelp = () => {
     });
   };
 
+  //Function with event listener that assigns user's choice to 'activityOfTrip' variable for later use.
   handleActivityChoice = () => {
     $('.js-activityChoice').on('click', function(event) {
       $.fn.fullpage.moveTo(5);
@@ -213,6 +221,7 @@ handleYelp = () => {
     });
   };
 
+  //Function with event listener that assigns user's choice to 'locationOfTrip' variable for later use.
   handleLocationPlan = () => {
     $('.locationSearchSpecial').keyup(function(event) {
       if (event.keyCode == 13) {
@@ -245,6 +254,8 @@ handleYelp = () => {
         }
       }
     });
+
+    //Event listener with conditional logic to send user back to any missed choices.
     $('.js-planTrip').on('click', function() {
       if ($('.locationSearchSpecial').val() === '') {
         $('.locationSearchSpecial').attr('placeholder', 'Enter a location.');
@@ -269,6 +280,7 @@ handleYelp = () => {
     });
   };
 
+  //Function with event listener to acquire user's current location.
   handleCurrentLocation = () => {
     $('.js-currentLocation').on('click', function(event) {
       if (priceOfTrip === undefined) {
@@ -294,9 +306,12 @@ handleYelp = () => {
 
 $(() => {
   handleYelp();
+  //jQuery plugin for fullpage scrolling.
   $('#fullpage').fullpage({
     anchors: ['section1', 'section2', 'section3', 'section4']
   });
+
+  //jQuery plugin for auto-typing text on landing page.
   $('.typedText').typeIt({
     strings: [
       'A romantic getaway with that special someone.',

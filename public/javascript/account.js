@@ -1,6 +1,7 @@
 handleAccountPage = () => {
   referenceCount = 0;
 
+  //Ajax call to retrieve all of user's agendas created while logged in.
   $.ajax({
     type: 'POST',
     url: '/data/current/agendas',
@@ -20,6 +21,7 @@ handleAccountPage = () => {
       let second = 0;
       let third = 0;
 
+      //For loop with conditional logic to create description of agenda based on choices made in app.js.
       for (let i = 0; i < counter; i++) {
         let spending;
         let events;

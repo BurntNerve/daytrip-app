@@ -4,6 +4,7 @@ handleAgendaPage = () => {
   const food = '#f26060';
   const savedAgenda = false;
 
+  //Function made to randomnly shuffle array retrieved from Yelp api call.
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
@@ -12,6 +13,7 @@ handleAgendaPage = () => {
     return array;
   }
 
+  //Function made to more cleanly format phone number retrieved from Yelp api call.
   formatPhoneNumber = phoneNumber => {
     if (phoneNumber === '') {
       return 'Phone number not provided.';
@@ -30,6 +32,7 @@ handleAgendaPage = () => {
     return newNumber;
   };
 
+  //Ajax call to retrieve agenda choices made in app.js.
   $.ajax({
     type: 'GET',
     url: '/data/options',
@@ -55,6 +58,7 @@ handleAgendaPage = () => {
         limit: 10
       };
 
+      //Function with conditional logic to style agenda according to choices made in app.js.
       renderInfo = () => {
         $.ajax({
           type: 'GET',
@@ -354,8 +358,8 @@ handleAgendaPage = () => {
         });
       };
 
+      //Function made to handle Yelp api calls with conditional logic based on what the choices made in app.js.
       handleApiCalls = () => {
-        //This bit if for the Scout Trip and all the possible choices the user can make.
         if (agendaOptions.lengthOfTrip === 3) {
           $.ajax({
             type: 'POST',
