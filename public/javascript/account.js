@@ -1,7 +1,4 @@
 handleAccountPage = () => {
-  console.log('loaded!');
-  console.log(localStorage.getItem('username'));
-
   referenceCount = 0;
 
   $.ajax({
@@ -11,7 +8,6 @@ handleAccountPage = () => {
       username: localStorage.getItem('username')
     },
     success: function(res) {
-      console.log(res);
       const counter = res.amount;
 
       if (counter === 0) {
@@ -110,21 +106,14 @@ handleAccountPage = () => {
             </div>
           </div>`;
         $('.agendaContainer').append(AGENDA_CARD);
-        console.log(first);
-        console.log(second);
-        console.log(third);
         if (first > second && first > third) {
           $(`.item${referenceCount}`).addClass('firstDominant');
-          console.log('first wins');
         } else if (second > first && second > third) {
           $(`.item${referenceCount}`).addClass('secondDominant');
-          console.log('second wins');
         } else if (third > first && third > second) {
           $(`.item${referenceCount}`).addClass('thirdDominant');
-          console.log('third wins!');
         } else if (first === second || first == third || second == third) {
           $(`.item${referenceCount}`).addClass('equal');
-          console.log('first and second tie!');
         }
         first = 0;
         second = 0;
@@ -147,7 +136,6 @@ handleAccountPage = () => {
           url: '/data/saved',
           data: res.agendas[agendaNumber],
           success: function() {
-            console.log('weeeee');
             location.assign('../html/saved.html');
           }
         });

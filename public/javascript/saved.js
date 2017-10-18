@@ -1,6 +1,4 @@
 handleSaveLoad = () => {
-  console.log('loaded!');
-
   const culture = '#56daff';
   const active = '#63ff82';
   const food = '#f26060';
@@ -24,7 +22,6 @@ handleSaveLoad = () => {
   };
 
   renderInfo = () => {
-    console.log('rendering');
     $.ajax({
       type: 'GET',
       url: '/data/saved',
@@ -41,16 +38,13 @@ handleSaveLoad = () => {
               type: 'POST',
               url: '/data/saved/changes',
               data: changes,
-              success: function(res) {
-                console.log(res);
-              }
+              success: function(res) {}
             });
           });
         };
         handleSaveChanges();
         handleDelete = () => {
           $('.deleteAgenda').on('click', function() {
-            console.log('deleting');
             $.ajax({
               type: 'POST',
               url: '/data/saved/delete',
@@ -59,14 +53,12 @@ handleSaveLoad = () => {
                 user: localStorage.getItem('username')
               },
               success: function(res) {
-                console.log(res);
                 location.assign('../html/account.html');
               }
             });
           });
         };
         handleDelete();
-        console.log(tempAgenda);
         agendaOptions = tempAgenda.info;
 
         if (agendaOptions.lengthOfTrip >= 3) {
@@ -74,7 +66,6 @@ handleSaveLoad = () => {
 
           $('.itemNameOne').text(tempAgenda['0'].name);
           if (tempAgenda['0'].image_url === '') {
-            console.log('what picture?');
             $('.itemOnePicture').css('display', 'none');
             $('.itemOneNoPicture').css('display', 'block');
           } else {
@@ -100,7 +91,6 @@ handleSaveLoad = () => {
 
           $('.itemNameTwo').text(tempAgenda['1'].name);
           if (tempAgenda['1'].image_url === '') {
-            console.log('what picture?');
             $('.itemTwoPicture').css('display', 'none');
             $('.itemTwoNoPicture').css('display', 'block');
           } else {
@@ -125,7 +115,6 @@ handleSaveLoad = () => {
 
           $('.itemNameThree').text(tempAgenda['2'].name);
           if (tempAgenda['2'].image_url === '') {
-            console.log('what picture?');
             $('.itemThreePicture').css('display', 'none');
             $('.itemThreeNoPicture').css('display', 'block');
           } else {
@@ -174,7 +163,6 @@ handleSaveLoad = () => {
 
             $('.itemNameFour').text(tempAgenda['3'].name);
             if (tempAgenda['3'].image_url === '') {
-              console.log('what picture?');
               $('.itemFourPicture').css('display', 'none');
               $('.itemFourNoPicture').css('display', 'block');
             } else {
@@ -199,7 +187,6 @@ handleSaveLoad = () => {
 
             $('.itemNameFive').text(tempAgenda['4'].name);
             if (tempAgenda['4'].image_url === '') {
-              console.log('what picture?');
               $('.itemFivePicture').css('display', 'none');
               $('.itemFiveNoPicture').css('display', 'block');
             } else {
@@ -255,7 +242,6 @@ handleSaveLoad = () => {
 
               $('.itemNameSix').text(tempAgenda['5'].name);
               if (tempAgenda['5'].image_url === '') {
-                console.log('what picture?');
                 $('.itemSixPicture').css('display', 'none');
                 $('.itemSixNoPicture').css('display', 'block');
               } else {
@@ -280,7 +266,6 @@ handleSaveLoad = () => {
 
               $('.itemNameSeven').text(tempAgenda['6'].name);
               if (tempAgenda['6'].image_url === '') {
-                console.log('what picture?');
                 $('.itemSevenPicture').css('display', 'none');
                 $('.itemSevenNoPicture').css('display', 'block');
               } else {

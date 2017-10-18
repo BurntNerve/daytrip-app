@@ -4,8 +4,6 @@ handleAgendaPage = () => {
   const food = '#f26060';
   const savedAgenda = false;
 
-  console.log('welcome to the agenda');
-
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
@@ -36,7 +34,6 @@ handleAgendaPage = () => {
     type: 'GET',
     url: '/data/options',
     success: function(options) {
-      console.log('here we goooo');
       const agendaOptions = {
         priceOfTrip: options.price,
         lengthOfTrip: Number(options.length),
@@ -58,22 +55,17 @@ handleAgendaPage = () => {
         limit: 10
       };
 
-      console.log(agendaOptions);
-
       renderInfo = () => {
-        console.log('rendering');
         $.ajax({
           type: 'GET',
           url: '/data/agenda',
           success: function(tempAgenda) {
-            console.log(tempAgenda);
             if (agendaOptions.lengthOfTrip >= 3) {
               $('.agendaTitle').text('Scout');
               $('.scoutItem').css('display', 'block');
 
               $('.itemNameOne').text(tempAgenda['0'].name);
               if (tempAgenda['0'].image_url === '') {
-                console.log('what picture?');
                 $('.itemOnePicture').css('display', 'none');
                 $('.itemOneNoPicture').css('display', 'block');
               } else {
@@ -99,7 +91,6 @@ handleAgendaPage = () => {
 
               $('.itemNameTwo').text(tempAgenda['1'].name);
               if (tempAgenda['1'].image_url === '') {
-                console.log('what picture?');
                 $('.itemTwoPicture').css('display', 'none');
                 $('.itemTwoNoPicture').css('display', 'block');
               } else {
@@ -124,7 +115,6 @@ handleAgendaPage = () => {
 
               $('.itemNameThree').text(tempAgenda['2'].name);
               if (tempAgenda['2'].image_url === '') {
-                console.log('what picture?');
                 $('.itemThreePicture').css('display', 'none');
                 $('.itemThreeNoPicture').css('display', 'block');
               } else {
@@ -178,7 +168,6 @@ handleAgendaPage = () => {
 
                 $('.itemNameFour').text(tempAgenda['3'].name);
                 if (tempAgenda['3'].image_url === '') {
-                  console.log('what picture?');
                   $('.itemFourPicture').css('display', 'none');
                   $('.itemFourNoPicture').css('display', 'block');
                 } else {
@@ -205,7 +194,6 @@ handleAgendaPage = () => {
 
                 $('.itemNameFive').text(tempAgenda['4'].name);
                 if (tempAgenda['4'].image_url === '') {
-                  console.log('what picture?');
                   $('.itemFivePicture').css('display', 'none');
                   $('.itemFiveNoPicture').css('display', 'block');
                 } else {
@@ -266,7 +254,6 @@ handleAgendaPage = () => {
 
                   $('.itemNameSix').text(tempAgenda['5'].name);
                   if (tempAgenda['5'].image_url === '') {
-                    console.log('what picture?');
                     $('.itemSixPicture').css('display', 'none');
                     $('.itemSixNoPicture').css('display', 'block');
                   } else {
@@ -293,7 +280,6 @@ handleAgendaPage = () => {
 
                   $('.itemNameSeven').text(tempAgenda['6'].name);
                   if (tempAgenda['6'].image_url === '') {
-                    console.log('what picture?');
                     $('.itemSevenPicture').css('display', 'none');
                     $('.itemSevenNoPicture').css('display', 'block');
                   } else {
@@ -415,10 +401,6 @@ handleAgendaPage = () => {
 
                     agenda.info.user = localStorage.getItem('username');
 
-                    console.log(localStorage.getItem('username'));
-
-                    console.log(agenda);
-
                     $.ajax({
                       type: 'POST',
                       url: '/data/agenda',
@@ -469,7 +451,6 @@ handleAgendaPage = () => {
                         agenda.info.name = 'The Balanced Scout';
                         agenda.info.user = localStorage.getItem('username');
 
-                        console.log(agenda);
                         $.ajax({
                           type: 'POST',
                           url: '/data/agenda',
@@ -529,9 +510,6 @@ handleAgendaPage = () => {
                       agenda.info.name = 'The Cultured Pioneer';
                     }
                     agenda.info.user = localStorage.getItem('username');
-
-                    console.log(agenda);
-
                     $.ajax({
                       type: 'POST',
                       url: '/data/agenda',
@@ -639,8 +617,6 @@ handleAgendaPage = () => {
                     }
                     agenda.info.user = localStorage.getItem('username');
 
-                    console.log(agenda);
-
                     $.ajax({
                       type: 'POST',
                       url: '/data/agenda',
@@ -680,8 +656,6 @@ handleAgendaPage = () => {
                         }
                         partialAgenda.splice(4, 0, event[0]);
                         partialAgenda.splice(5, 0, event[1]);
-                        console.log(partialAgenda);
-
                         const agenda = partialAgenda.reduce(function(
                           acc,
                           cur,
@@ -713,10 +687,6 @@ handleAgendaPage = () => {
         }
       };
       handleApiCalls();
-    },
-    error: function(res) {
-      console.log(res);
-      console.log('errored');
     }
   });
 };
