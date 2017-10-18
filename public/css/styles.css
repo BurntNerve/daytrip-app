@@ -236,7 +236,7 @@ a {
   height: 100vh;
   padding-top: 10%;
   /*padding-left: 5%;*/
-  font-size: 1.3em;
+  font-size: 2.5vh;
   box-sizing: border-box;
   margin-bottom: 0;
   position: relative;
@@ -309,7 +309,7 @@ a {
 }
 
 .choosePrice h1 {
-  font-size: 3em;
+  font-size: 2vh;
   padding-top: 5%;
   margin-top: 0;
   margin-bottom: 0;
@@ -576,7 +576,7 @@ button {
   .chooseLength h1,
   .chooseActivity h1,
   .chooseLocation h1 {
-    font-size: 2.7em;
+    font-size: 5.5vh;
   }
 
   .choiceHeader {
