@@ -5,7 +5,7 @@ https://immense-headland-39607.herokuapp.com/
 ## Why?
 
 I made DayTripper with the intention of simplifying the process of going out. Too frequently I would find myself exhausted
-during the discussion of what to do or where to visit with friends and family. DayTripper allows users to select from several
+during the discussion of what to do or where to visit with friends and family. DayTripper allows users to select
 from among several choices and generates agendas of varying sizes, activities, and price ranges.
 
 ![](screenshots/landingPage.JPG)
