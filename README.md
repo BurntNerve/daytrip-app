@@ -1,5 +1,7 @@
 # DayTripper
 
+https://immense-headland-39607.herokuapp.com/
+
 ## Why?
 
 I made DayTripper with the intention of simplifying the process of going out. Too frequently I would find myself exhausted
