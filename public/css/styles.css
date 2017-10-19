@@ -771,6 +771,7 @@ button {
   .choice {
     width: 35vw;
     margin-top: 3vh;
+    cursor: pointer;
   }
 
   .choosePrice,
@@ -843,6 +844,45 @@ button {
   }
 }
 
+@media only screen and (min-width: 1200px) and (min-height: 740px) {
+  .choosePrice h1,
+  .chooseLength h1,
+  .chooseActivity h1,
+  .chooseLocation h1 {
+    font-size: 8vh !important;
+    padding-top: 3vh;
+  }
+
+  .choiceHeader {
+    font-size: 9.5vh !important;
+    padding-top: 1vh !important;
+  }
+
+  .icon {
+    height: 7.5vh;
+    width: 7.5vh;
+  }
+
+  .choiceDescription {
+    font-size: 2.5vh;
+    padding-top: 10vh;
+  }
+}
+
+@media only screen and (min-width: 1250px) and (min-height: 1100px) {
+  .choosePrice h1,
+  .chooseLength h1,
+  .chooseActivity h1,
+  .chooseLocation h1 {
+    font-size: 6vh !important;
+    padding-top: 4vh;
+  }
+
+  .choiceDescription {
+    font-size: 2vh;
+    padding-top: 10vh;
+  }
+}
 @media only screen and (min-width: 2560px) {
   .logo,
   .accountLink {
