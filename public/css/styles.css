@@ -605,7 +605,7 @@ button {
   }
 }
 
-@media only screen and (min-width: 414px) and (max-width: 727px) {
+@media only screen and (min-width: 414px) and (max-width: 499px) {
   .definition {
     font-size: 2vh;
   }
@@ -628,7 +628,29 @@ button {
   }
 }
 
-@media only screen and (min-width: 728px) and (max-width: 979px) {
+@media only screen and (min-width: 500px) and (max-width: 665px) {
+  .choiceHeader {
+    font-size: 7vh !important;
+  }
+
+  .icon {
+    height: 7vh;
+    width: 7vh;
+  }
+}
+
+@media only screen and (min-width: 666px) and (max-width: 728px) {
+  .choiceHeader {
+    font-size: 8vh !important;
+  }
+
+  .icon {
+    height: 7vh;
+    width: 7vh;
+  }
+}
+
+@media only screen and (min-width: 728px) and (max-width: 849px) {
   .signUp,
   .login,
   .logOut {
@@ -661,7 +683,7 @@ button {
   }
 
   .choiceHeader {
-    font-size: 6.5vh !important;
+    font-size: 7.5vh !important;
     padding-top: 2.5% !important;
   }
 
@@ -683,6 +705,21 @@ button {
   }
 }
 
+@media only screen and (min-width: 850px) and (max-width: 979px) {
+  .icon {
+    height: 8vh;
+    width: 8vh;
+  }
+
+  .choice {
+    width: 60vw;
+  }
+
+  .choiceHeader {
+    font-size: 8vh !important;
+  }
+}
+
 @media only screen and (min-width: 980px) and (max-width: 1023px) {
   .signUp,
   .login,
@@ -696,9 +733,13 @@ button {
     padding-top: 2.5% !important;
   }
 
+  .choice {
+    width: 60vw;
+  }
+
   .icon {
-    height: 8vh;
-    width: 8vh;
+    height: 9vh;
+    width: 9vh;
   }
 }
 
