@@ -469,9 +469,10 @@ button {
   border-bottom: solid 2px #c9c9c9;
   transition: border 0.3s;
   text-align: left;
-  margin-top: 0;
+  margin: 0 auto;
   border-radius: 40px;
   font-size: 1.5em;
+  display: block;
   outline: 0;
 }
 
@@ -502,6 +503,17 @@ button {
   margin-top: 5% !important;
   margin-bottom: 5% !important;
   padding-top: 0 !important;
+}
+
+@media only screen and (min-width: 240px) and (max-width: 319px) {
+  .icon {
+    height: 6.5vh;
+    width: 6.5vh;
+  }
+
+  .choiceHeader {
+    font-size: 6vh !important;
+  }
 }
 
 @media only screen and (min-width: 320px) and (max-width: 359px) {
@@ -537,7 +549,7 @@ button {
   }
 
   .choiceHeader {
-    font-size: 8.5vh !important;
+    font-size: 6vh !important;
   }
 
   .pageTitle {
@@ -874,7 +886,7 @@ button {
   }
 }
 
-@media only screen and (min-width: 1250px) and (min-height: 1100px) {
+@media only screen and (min-width: 1200px) and (min-height: 1100px) {
   .choosePrice h1,
   .chooseLength h1,
   .chooseActivity h1,

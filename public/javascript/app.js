@@ -308,7 +308,8 @@ $(() => {
   handleYelp();
   //jQuery plugin for fullpage scrolling.
   $('#fullpage').fullpage({
-    anchors: ['section1', 'section2', 'section3', 'section4']
+    anchors: ['section1', 'section2', 'section3', 'section4'],
+    responsiveWidth: 1000
   });
 
   //jQuery plugin for auto-typing text on landing page.
