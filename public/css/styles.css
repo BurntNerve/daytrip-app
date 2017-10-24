@@ -138,11 +138,20 @@ body {
 
 .logInContainer {
   background-color: #f26060 !important;
+  position: relative;
 }
 
 .logInConfirm {
   background-color: #ffe74c;
   color: #333 !important;
+}
+
+.demoAccount {
+  color: #f9f9f9;
+  width: 100%;
+  padding-bottom: 2%;
+  position: absolute;
+  bottom: 0;
 }
 .signUpPage {
   height: 100vh;
