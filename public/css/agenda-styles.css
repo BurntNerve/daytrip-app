@@ -74,6 +74,7 @@ a {
   outline: 0;
   font-size: 1.3em;
   margin-bottom: 5vh;
+  cursor: pointer;
 }
 
 .deleteAgenda {
@@ -95,8 +96,8 @@ a {
 .agendaItem {
   box-sizing: border-box;
   width: 90vw;
-  max-width: 550px;
-  max-height: 780px;
+  max-width: 450px;
+  max-height: 720px;
   height: 70vh;
   margin: 0 auto;
   margin-top: 2.5%;
@@ -112,6 +113,7 @@ a {
   margin-top: 0;
   display: block;
   outline: 0;
+  cursor: pointer;
 }
 
 .scoutItem {
@@ -207,7 +209,7 @@ a {
 
 @media only screen and (min-width: 320px) and (max-width: 359px) {
   .itemInfo {
-    font-size: 2.6vh;
+    font-size: 2.2vh;
   }
 }
 
