@@ -4,36 +4,40 @@ body {
   max-width: 100vw;
 }
 
+a {
+  text-decoration: none;
+}
+
 .navbar {
   position: fixed;
   height: 7vh;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   background: white;
   z-index: 9;
   color: #333;
+  max-height: 69px;
+  font-size: 14px;
 }
 
 .logo {
   font-family: 'Libre Franklin', sans-serif;
   margin-top: 0;
-  font-size: 1.5em;
   font-weight: bolder;
   padding-left: 2.5%;
-  padding-top: 2.5%;
   display: inline-block;
+  margin-bottom: 0 !important;
 }
 
 .accountLink {
   color: #333;
   display: inline-block;
-  float: right;
-  padding-top: 4%;
   padding-right: 2.5%;
-  padding-bottom: 2.5%;
   text-decoration: none;
   display: none;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   cursor: pointer;
 }
 
@@ -58,7 +62,7 @@ body {
   font-family: 'Libre Franklin', sans-serif;
   border: 0;
   position: absolute;
-  bottom: 10%;
+  bottom: 5%;
   left: 5%;
   display: block;
   width: 40%;
@@ -73,6 +77,8 @@ body {
   transition: border 0.25s ease;
   transition: color 0.25s ease;
   cursor: pointer;
+  max-width: 186px;
+  max-height: 62px;
 }
 
 .signUp:hover {
@@ -86,7 +92,7 @@ body {
   font-family: 'Libre Franklin', sans-serif;
   border: 0;
   position: absolute;
-  bottom: 10%;
+  bottom: 5%;
   right: 5%;
   display: inline-block;
   width: 40%;
@@ -101,6 +107,8 @@ body {
   transition: border 0.25s ease;
   transition: border 0.25s ease;
   cursor: pointer;
+  max-width: 186px;
+  max-height: 62px;
 }
 
 .login:hover {
@@ -114,7 +122,7 @@ body {
   border: 0;
   font-family: 'Libre Franklin', sans-serif;
   position: absolute;
-  bottom: 10%;
+  bottom: 5%;
   right: 5%;
   display: none;
   width: 40%;
@@ -129,6 +137,8 @@ body {
   transition: border 0.25s ease;
   transition: border 0.25s ease;
   cursor: pointer;
+  max-width: 186px;
+  max-height: 62px;
 }
 
 .logInPage {
@@ -202,10 +212,6 @@ body {
   cursor: pointer;
 }
 
-a {
-  color: white;
-}
-
 .appDescriptionOne {
   background-color: #2fd3ff;
   width: 100vw;
@@ -213,22 +219,8 @@ a {
   margin: 0 auto;
 }
 
-.appDescriptionOne h1 {
-  font-family: 'Chicle', cursive;
-  font-size: 4em;
-}
-
 .headerText {
   padding-top: 20%;
-}
-.chooseHeader {
-  padding-top: 15%;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 2.85em;
-  color: white;
-  text-align: center;
-  font-family: 'Libre Franklin', sans-serif;
 }
 
 .header {
@@ -244,15 +236,26 @@ a {
   width: 100vw;
   height: 100vh;
   padding-top: 7vh;
-  font-size: 2.5vh;
   box-sizing: border-box;
   margin-bottom: 0;
   position: relative;
 }
 
 .wordName {
-  margin-top: 10%;
-  font-size: 4em;
+  margin-top: 3vh;
+  font-size: 13vh;
+}
+
+.smallWord {
+  font-size: 3vh;
+}
+
+.grammarWord {
+  font-size: 2vh;
+}
+
+.typedText {
+  font-size: 4vh;
 }
 
 .defineText {
@@ -290,70 +293,39 @@ a {
     color: pink;
   }
 }
-
-.thirdPage {
+.itemPage {
   height: 100vh;
   width: 100vw;
-}
-.choosePrice {
-  height: 100vh;
-  width: 100vw;
-  background-color: #56daff;
-  color: white;
-  box-sizing: border-box;
   margin-top: 0;
-  padding-top: 7vh;
+}
+
+.choosePrice {
+  background-color: #56daff;
 }
 
 .pageTitle {
-  padding-left: 10% !important;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
   color: white;
-  font-size: 3em;
-  padding-top: 5%;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.choosePrice h1 {
-  font-size: 5vh;
-  padding-top: 1.5vh;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 5%;
+  font-size: 6vh;
+  padding-top: 3vh;
 }
 
 .chooseLength {
-  height: 100vh;
-  width: 100vw;
   background-color: #63ff82;
-  box-sizing: border-box;
-  padding-top: 7vh;
-}
-
-.chooseLength h1 {
-  font-size: 5vh;
-  padding-top: 1.5vh;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-button {
-  margin: 0 auto;
-  width: 80vw;
 }
 
 .choice {
-  height: 23vh;
-  width: 80vw;
   background-color: white;
-  padding-bottom: 5%;
   display: block;
   color: #333;
   border: 0;
-  text-align: center;
-  margin-top: 3%;
   outline: 0;
-  position: relative;
+  width: 90vw;
+  max-width: 550px;
+  margin: 0 auto;
+  margin-bottom: 5vh;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -373,101 +345,44 @@ button {
 }
 
 .choiceHeader {
-  text-align: center;
-  padding-top: 0;
-  font-size: 8vh !important;
-  padding-left: 0;
-  display: inline;
-  position: absolute;
-  top: 3%;
+  display: block;
+  float: left;
+  margin-top: 2.5%;
+  padding-left: 2.5%;
+  font-size: 7vh;
+  margin-bottom: 0 !important;
 }
 
 .icon {
-  height: 3.3em;
-  width: 3.3em;
   display: inline-block;
-  position: absolute;
-  left: 5%;
-  top: 11%;
+  height: 7vh;
+  width: 7vh;
+  float: left;
+  padding-left: 2.5%;
+  padding-top: 2.5%;
 }
 
-.firstPriceHeader {
-  right: 36%;
-}
-
-.secondPriceHeader {
-  right: 24%;
-}
-
-.thirdPriceHeader {
-  right: 13%;
-}
-
-.firstLengthHeader {
-  right: 29%;
-}
-
-.secondLengthHeader {
-  right: 14%;
-}
-
-.thirdLengthHeader {
-  right: 23%;
-}
-
-.firstActivityHeader {
-  right: 18%;
-}
-
-.secondActivityHeader {
-  right: 25%;
-}
-
-.thirdActivityHeader {
-  right: 11%;
-}
-
-.firstLocationHeader {
-  right: 18%;
-}
 .choiceDescription {
+  display: block;
+  margin-top: 11vh;
   text-align: left;
-  padding-top: 20%;
   font-weight: bold;
   padding-left: 5%;
   font-size: 2.3vh;
+  text-decoration: none;
 }
 
 .chooseActivity {
-  height: 100vh;
-  width: 100vw;
   background-color: #f26060;
-  box-sizing: border-box;
-  padding-top: 7vh;
-}
-
-.chooseActivity h1 {
-  font-size: 5vh;
-  padding-top: 1.5vh;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 .chooseLocation {
-  height: 100vh;
-  width: 100vw;
   background-color: #ffe74c;
-  box-sizing: border-box;
   position: relative;
-  padding-top: 7vh;
 }
 
-.chooseLocation h1 {
-  font-size: 5vh;
-  padding-top: 1.5vh;
-  margin-top: 0;
-  margin-bottom: 0;
-  color: #333;
+.locationTitle {
+  padding-top: 10%;
 }
 
 .center {
@@ -520,474 +435,5 @@ button {
   margin-top: 5% !important;
   margin-bottom: 5% !important;
   padding-top: 0 !important;
-}
-
-@media only screen and (min-width: 240px) and (max-width: 319px) {
-  .icon {
-    height: 6.5vh;
-    width: 6.5vh;
-  }
-
-  .choiceHeader {
-    font-size: 6vh !important;
-  }
-}
-
-@media only screen and (min-width: 320px) and (max-width: 359px) {
-  .definition {
-    font-size: 2.5vh;
-  }
-
-  .signUp {
-    bottom: 5%;
-  }
-
-  .login {
-    bottom: 5%;
-  }
-
-  .logOut {
-    bottom: 5%;
-  }
-
-  .choiceDescription {
-    font-size: 2.5vh;
-  }
-
-  .choosePrice h1,
-  .chooseLength h1,
-  .chooseActivity h1,
-  .chooseLocation h1 {
-    font-size: 6vh;
-  }
-
-  .choice {
-    font-size: 2.5vh;
-  }
-
-  .choiceHeader {
-    font-size: 6vh !important;
-  }
-
-  .pageTitle {
-  }
-
-  .locationSearch {
-    font-size: 3vh;
-  }
-
-  .signUpConfirm {
-    margin-top: 3.5vh;
-  }
-}
-
-@media only screen and (min-width: 360px) and (max-width: 411px) {
-  .choosePrice h1,
-  .chooseLength h1,
-  .chooseActivity h1,
-  .chooseLocation h1 {
-    font-size: 6.5vh;
-  }
-
-  .signUp,
-  .login,
-  .logOut {
-    bottom: 5%;
-  }
-
-  .locationSearch {
-    font-size: 1.3em;
-  }
-
-  .choiceHeader {
-    font-size: 7.5vh !important;
-  }
-}
-
-@media (width: 412px) and (max-width: 413px) and {
-  .signUp,
-  .login,
-  .logOut {
-    bottom: 5%;
-  }
-  .choosePrice h1,
-  .chooseLength h1,
-  .chooseActivity h1,
-  .chooseLocation h1 {
-    font-size: 5vh;
-  }
-
-  .choiceHeader {
-    font-size: 3vh !important;
-  }
-}
-
-@media only screen and (min-width: 414px) and (max-width: 499px) {
-  .definition {
-    font-size: 2vh;
-  }
-
-  .choosePrice h1,
-  .chooseLength h1,
-  .chooseActivity h1,
-  .chooseLocation h1 {
-    font-size: 5vh;
-  }
-
-  .choiceHeader {
-    font-size: 7vh !important;
-  }
-
-  .signUp,
-  .login,
-  .logOut {
-    bottom: 5%;
-  }
-}
-
-@media only screen and (min-width: 500px) and (max-width: 665px) {
-  .choiceHeader {
-    font-size: 7vh !important;
-  }
-
-  .icon {
-    height: 7vh;
-    width: 7vh;
-  }
-}
-
-@media only screen and (min-width: 666px) and (max-width: 728px) {
-  .choiceHeader {
-    font-size: 8vh !important;
-  }
-
-  .icon {
-    height: 7vh;
-    width: 7vh;
-  }
-}
-
-@media only screen and (min-width: 728px) and (max-width: 849px) {
-  .signUp,
-  .login,
-  .logOut {
-    bottom: 5%;
-    width: 25%;
-  }
-
-  .definition {
-    font-size: 2.5vh;
-  }
-
-  .icon {
-    height: 7vh;
-    width: 7vh;
-  }
-
-  .choosePrice h1,
-  .chooseLength h1,
-  .chooseActivity h1,
-  .chooseLocation h1 {
-    font-size: 5vh;
-  }
-
-  .choice {
-    width: 65vw;
-  }
-
-  .choiceDescription {
-    font-size: 2vh;
-  }
-
-  .choiceHeader {
-    font-size: 7.5vh !important;
-    padding-top: 2.5% !important;
-  }
-
-  .locationSearch {
-    font-size: 3.5vh;
-  }
-
-  .confirm {
-    font-size: 3.5vh;
-  }
-
-  .planTrip {
-    width: 16vw;
-    height: 8vh;
-  }
-
-  .wordName {
-    margin-top: 5%;
-  }
-}
-
-@media only screen and (min-width: 850px) and (max-width: 979px) {
-  .icon {
-    height: 8vh;
-    width: 8vh;
-  }
-
-  .choice {
-    width: 60vw;
-  }
-
-  .choiceHeader {
-    font-size: 8vh !important;
-  }
-}
-
-@media only screen and (min-width: 980px) and (max-width: 1023px) {
-  .signUp,
-  .login,
-  .logOut {
-    bottom: 5%;
-    width: 20%;
-  }
-
-  .choiceHeader {
-    font-size: 9.5vh !important;
-    padding-top: 2.5% !important;
-  }
-
-  .choice {
-    width: 60vw;
-  }
-
-  .icon {
-    height: 9vh;
-    width: 9vh;
-  }
-}
-
-@media only screen and (min-width: 1024px) and (max-width: 1199px) {
-  .logo {
-    font-size: 3.5vh;
-  }
-  .definition {
-    font-size: 2.8vh;
-  }
-
-  .icon {
-    height: 7vh;
-    width: 7vh;
-  }
-
-  .choiceHeader {
-    font-size: 5.7em !important;
-    padding-top: 2.5% !important;
-  }
-
-  .choiceDescription {
-    font-size: 2vh;
-  }
-
-  .choice {
-    width: 55vw;
-  }
-
-  .choosePrice h1,
-  .chooseLength h1,
-  .chooseActivity h1,
-  .chooseLocation h1 {
-    font-size: 5vh;
-  }
-
-  .locationSearch {
-    font-size: 4vh;
-  }
-
-  .signUpContainer h2 {
-    font-size: 3.5vh;
-  }
-
-  .signUpTitle {
-    font-size: 4vh;
-  }
-
-  .accountLink {
-    font-size: 3vh;
-  }
-
-  .planTrip {
-    width: 16vh;
-    height: 8vh;
-    font-size: 3vh;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  .definition {
-    font-size: 3vh;
-  }
-
-  .logo {
-    font-size: 3vh;
-    padding-top: 1.5vh;
-  }
-
-  .accountLink {
-    font-size: 2.5vh;
-    padding-top: 1.5vh;
-  }
-
-  .signUp,
-  .login,
-  .logOut {
-    bottom: 5%;
-
-    width: 10%;
-  }
-
-  .wordName {
-    margin-top: 1%;
-  }
-
-  .choice {
-    width: 35vw;
-    margin-top: 3vh;
-    cursor: pointer;
-  }
-
-  .choosePrice,
-  .chooseLength,
-  .chooseActivity,
-  .chooseLocation {
-    padding-top: 3%;
-  }
-
-  .choosePrice h1,
-  .chooseLength h1,
-  .chooseActivity h1,
-  .chooseLocation h1 {
-    font-size: 6.5vh;
-  }
-
-  .pageTitle {
-    text-align: center;
-    padding-left: 0 !important;
-  }
-
-  .icon {
-    height: 10vh;
-    width: 10vh;
-  }
-
-  .choiceHeader {
-    font-size: 11vh !important;
-    padding-top: 2.5% !important;
-  }
-
-  .choiceDescription {
-    font-size: 2.5vh;
-    padding-top: 12vh;
-  }
-
-  .or {
-    margin-top: 3vh !important;
-    margin-bottom: 3vh !important;
-  }
-
-  .locationSearch {
-    font-size: 3vh;
-  }
-
-  .planTrip {
-    width: 10vw;
-    height: 10vh;
-    font-size: ;
-    margin-top: 2%;
-  }
-
-  .signUpContainer h2 {
-    font-size: 3vh;
-  }
-
-  .signUpTitle {
-    font-size: 5vh;
-  }
-
-  .signUpField,
-  .logInPassword {
-    display: block;
-    margin: 0 auto;
-  }
-
-  .confirm {
-    width: 25vw;
-    font-size: 3.5vh;
-  }
-}
-
-@media only screen and (min-width: 1200px) and (min-height: 740px) {
-  .choosePrice h1,
-  .chooseLength h1,
-  .chooseActivity h1,
-  .chooseLocation h1 {
-    font-size: 8vh !important;
-    padding-top: 3vh;
-  }
-
-  .choiceHeader {
-    font-size: 9.5vh !important;
-    padding-top: 1vh !important;
-  }
-
-  .icon {
-    height: 7.5vh;
-    width: 7.5vh;
-  }
-
-  .choiceDescription {
-    font-size: 2.5vh;
-    padding-top: 10vh;
-  }
-}
-
-@media only screen and (min-width: 1200px) and (min-height: 1100px) {
-  .choosePrice h1,
-  .chooseLength h1,
-  .chooseActivity h1,
-  .chooseLocation h1 {
-    font-size: 6vh !important;
-    padding-top: 4vh;
-  }
-
-  .choiceDescription {
-    font-size: 2vh;
-    padding-top: 10vh;
-  }
-}
-@media only screen and (min-width: 2560px) {
-  .logo,
-  .accountLink {
-    padding-top: 1%;
-  }
-
-  .accountLink {
-    font-size: 2.5em;
-  }
-
-  .choosePrice h1,
-  .chooseLength h1,
-  .chooseActivity h1,
-  .chooseLocation h1 {
-    font-size: 4.5em;
-    padding-top: 2.8%;
-  }
-
-  .icon {
-    height: 6.5em;
-    width: 6.5em;
-  }
-
-  .choiceHeader {
-    font-size: 9em !important;
-    padding-top: 2.5% !important;
-    text-align: center;
-  }
-
-  .choice {
-    margin-top: 1%;
-  }
+  font-size: 3vh;
 }

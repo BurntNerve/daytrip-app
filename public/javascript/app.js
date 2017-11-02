@@ -169,7 +169,6 @@ handleYelp = () => {
   //Function with event listener that assigns user's choice to 'priceOfTrip' variable for later use.
   handlePriceChoice = () => {
     $('.js-priceChoice').on('click', function(event) {
-      $.fn.fullpage.moveTo(3);
       $('.js-priceChoice').removeClass('picked');
       $(this).addClass('picked');
       priceOfTrip = $(this)
@@ -188,7 +187,6 @@ handleYelp = () => {
   //Function with event listener that assigns user's choice to 'lengthOfTrip' variable for later use.
   handleLengthChoice = () => {
     $('.js-lengthChoice').on('click', function(event) {
-      $.fn.fullpage.moveTo(4);
       $('.js-lengthChoice').removeClass('picked');
       $(this).addClass('picked');
       lengthOfTrip = $(this)
@@ -207,7 +205,6 @@ handleYelp = () => {
   //Function with event listener that assigns user's choice to 'activityOfTrip' variable for later use.
   handleActivityChoice = () => {
     $('.js-activityChoice').on('click', function(event) {
-      $.fn.fullpage.moveTo(5);
       $('.js-activityChoice').removeClass('picked');
       $(this).addClass('picked');
       activityOfTrip = $(this)
@@ -307,10 +304,10 @@ handleYelp = () => {
 $(() => {
   handleYelp();
   //jQuery plugin for fullpage scrolling.
-  $('#fullpage').fullpage({
+  /*$('#fullpage').fullpage({
     anchors: ['section1', 'section2', 'section3', 'section4'],
-    responsiveWidth: 1000
-  });
+    responsiveWidth: 3000
+  });*/
 
   //jQuery plugin for auto-typing text on landing page.
   $('.typedText').typeIt({

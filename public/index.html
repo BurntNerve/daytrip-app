@@ -55,8 +55,8 @@
     <div class=" secondPage section">
       <div class="definition">
         <h1 class="wordName defineText">day trip<h1>
-        <h2 class="defineText">/ˈdā ˌtrip/</h2>
-        <p class="defineText"><em>noun</em></p>
+        <h2 class="defineText smallWord">/ˈdā ˌtrip/</h2>
+        <p class="defineText grammarWord"><em>noun</em></p>
         <h1 class="typedText defineText cycle"></h1>
         <a href="#section1" class="signUpLink"><button class="signUp">Sign Up</button></a>
         <a href="#section1" class="LogInLink"><button class="login">Log In</button></a>
@@ -64,12 +64,14 @@
     </div>
     </div>
     <div class="section thirdPage">
-      <div class="choosePrice">
+      <div class="choosePrice itemPage">
         <h1 class="pageTitle">Select a price point:</h1>
         <button class="choice js-priceChoice firstChoice">
-          <img src="./images/019-dollar-1.png" alt="single coin" class="icon">
-          <h1 class="choiceHeader firstPriceHeader">Save</h1>
-          <p class="choiceDescription">We'll focus on getting you the most bang for your buck while still choosing highly rated things.</p>
+          <div class="choiceNav">
+            <img src="./images/019-dollar-1.png" alt="single coin" class="icon">
+            <h1 class="choiceHeader firstPriceHeader">Save</h1>
+          </div>
+            <p class="choiceDescription">We'll focus on getting you the most bang for your buck while still choosing highly rated things.</p>
         </button>
         <button class="choice js-priceChoice">
             <img src="./images/007-coin.png" alt="stack of coins" class="icon">
@@ -84,7 +86,7 @@
       </div>
     </div>
     <div class="section">
-      <div class="chooseLength">
+      <div class="chooseLength itemPage">
         <h1 class="pageTitle">Select a trip length:</h1>
         <button class="choice js-lengthChoice firstChoice">
           <img src="./images/hiker.png" alt="hiker" class="icon">
@@ -104,7 +106,7 @@
       </div>
     </div>
     <div class="section">
-      <div class="chooseActivity">
+      <div class="chooseActivity itemPage">
         <h1 class="pageTitle">Select an activity:</h1>
         <button class="choice js-activityChoice firstChoice">
           <img src="./images/theater.png" alt="theater" class="icon">
@@ -124,8 +126,8 @@
       </div>
     </div>
     <div class="section">
-      <div class="chooseLocation">
-        <h1 class="pageTitle">Select a location:</h1>
+      <div class="chooseLocation itemPage">
+        <h1 class="pageTitle locationTitle">Select a location:</h1>
         <a href="./html/agenda.html" class="currentLocationPlan">
           <button class="choice js-currentLocation currentLocation">
             <img src="./images/048-location.png" alt="current location" class="icon">
@@ -135,7 +137,7 @@
         </a>
         <h1 class="or"><em>or...</em></h1>
         <div class="center">
-          <input type="text" class="locationSearch locationSearchSpecial" size="24" placeholder="City, state, or zipcode">
+          <input type="text" class="locationSearch locationSearchSpecial" placeholder="City, state, or zipcode">
         </div>
         <a href="./html/agenda.html" class="planLink"><button class="planTrip js-planTrip">Plan</button></a>
       </div>
