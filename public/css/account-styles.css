@@ -11,41 +11,44 @@ a {
 
 .navbar {
   position: fixed;
-  height: 6vh;
-  display: block;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   background: white;
   z-index: 9;
   color: #333;
+  max-height: 69px;
+  font-size: 14px;
 }
 
 .navbar:focus {
   outline: 0 !important;
 }
+
 .logo {
   font-family: 'Libre Franklin', sans-serif;
   margin-top: 0;
-  font-size: 1.5em;
   font-weight: bolder;
-  padding-left: 2.5%;
-  padding-top: 2.5%;
   display: inline-block;
-  outline: 0;
-  cursor: pointer;
+  margin-bottom: 0 !important;
+}
+
+.homeLink {
+  padding-left: 2.5%;
 }
 
 .accountLink {
   color: #333;
   display: inline-block;
   float: right;
-  padding-top: 4%;
-  padding-right: 2.5%;
-  padding-bottom: 2.5%;
   text-decoration: none;
   display: inline-block;
-  font-size: 1.2em;
   outline: 0;
   cursor: pointer;
+  padding-right: 2.5%;
+  font-size: 1.2rem;
 }
 
 #red {
@@ -86,6 +89,7 @@ a {
   margin: 0 auto;
   font-weight: 800;
   cursor: pointer;
+  max-width: 462px;
 }
 
 .agendaCard p {

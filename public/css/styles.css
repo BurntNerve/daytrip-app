@@ -310,6 +310,7 @@ a {
   color: white;
   font-size: 6vh;
   padding-top: 3vh;
+  margin-bottom: 3vh;
 }
 
 .chooseLength {
@@ -381,6 +382,10 @@ a {
   position: relative;
 }
 
+.chooseLocation .pageTitle {
+  color: #333;
+}
+
 .locationTitle {
   padding-top: 10%;
 }
@@ -420,7 +425,7 @@ a {
   border: none;
   width: 4em;
   height: 2.5em;
-  margin: 8% auto;
+  margin: 4vh auto;
   text-align: center;
   border-radius: 5px;
   border-bottom: solid 2px #c9c9c9;
@@ -435,5 +440,5 @@ a {
   margin-top: 5% !important;
   margin-bottom: 5% !important;
   padding-top: 0 !important;
-  font-size: 3vh;
+  font-size: 4vh;
 }
