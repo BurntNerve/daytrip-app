@@ -310,7 +310,7 @@ a {
   color: white;
   font-size: 6vh;
   padding-top: 3vh;
-  margin-bottom: 3vh;
+  margin-bottom: 5vh;
 }
 
 .chooseLength {
@@ -384,10 +384,8 @@ a {
 
 .chooseLocation .pageTitle {
   color: #333;
-}
-
-.locationTitle {
-  padding-top: 10%;
+  padding-top: 8vh;
+  margin-bottom: 3vh;
 }
 
 .center {
@@ -396,7 +394,8 @@ a {
 }
 
 .currentLocation {
-  margin-top: 5%;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .locationSearch {
@@ -417,14 +416,22 @@ a {
   border-bottom: solid 2px #969696;
 }
 
+.locationSearchSpecial {
+  width: 80vw;
+  height: 5vh;
+  max-width: 380px;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
 .planTrip {
   background-color: white;
   padding: 0;
   font-weight: bold;
   display: block;
   border: none;
-  width: 4em;
-  height: 2.5em;
+  width: 50vw;
+  height: 15vh;
   margin: 4vh auto;
   text-align: center;
   border-radius: 5px;
@@ -433,12 +440,13 @@ a {
   color: #333;
   outline: 0;
   cursor: pointer;
+  max-width: 242px;
+  max-height: 108px;
 }
 
 .or {
   text-align: center;
-  margin-top: 5% !important;
-  margin-bottom: 5% !important;
-  padding-top: 0 !important;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
   font-size: 4vh;
 }
