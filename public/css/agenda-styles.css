@@ -9,35 +9,38 @@ a {
 .navbar {
   position: fixed;
   height: 7vh;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   background: white;
   z-index: 9;
   color: #333;
+  max-height: 69px;
+  font-size: 14px;
+}
+
+.savedLink {
+  padding-left: 2.5%;
 }
 
 .logo {
   font-family: 'Libre Franklin', sans-serif;
   margin-top: 0;
-  font-size: 1.5em;
   font-weight: bolder;
   padding-left: 2.5%;
-  padding-top: 2.5%;
   display: inline-block;
-  outline: 0;
+  margin-bottom: 0 !important;
 }
 
 .accountLink {
   color: #333;
   display: inline-block;
-  float: right;
-  padding-top: 4%;
   padding-right: 2.5%;
-  padding-bottom: 2.5%;
   text-decoration: none;
   display: inline-block;
-  font-size: 1.2em;
-  outline: 0;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
 #red {
@@ -98,7 +101,6 @@ a {
   width: 90vw;
   max-width: 450px;
   max-height: 720px;
-  height: 70vh;
   margin: 0 auto;
   margin-top: 2.5%;
   margin-bottom: 2.5%;
@@ -141,7 +143,6 @@ a {
 
 .pictureDisplay {
   display: block;
-  height: 45%;
   width: 100%;
   border-radius: 5px;
   border-bottom-left-radius: 0;
@@ -150,7 +151,7 @@ a {
 }
 
 .picture {
-  height: 100%;
+  height: 40%;
   width: 100%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -177,9 +178,10 @@ a {
 
 .itemInfo {
   box-sizing: border-box;
-  height: 55%;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  padding-top: 1vh;
+  padding-bottom: 4vh;
 }
 
 .itemGenre {
@@ -205,77 +207,4 @@ a {
   margin-left: 2.5%;
   margin-top: 2.5%;
   color: white;
-}
-
-@media only screen and (min-width: 320px) and (max-width: 359px) {
-  .itemInfo {
-    font-size: 2.2vh;
-  }
-}
-
-@media only screen and (min-width: 360px) and (max-width: 767px) {
-  .itemInfo {
-    font-size: 2.3vh;
-  }
-}
-
-@media only screen and (min-width: 768px) and (min-height: 1024px) {
-  .agendaItem {
-    width: 70vw;
-  }
-
-  .itemInfo {
-    font-size: 2vh;
-  }
-}
-
-@media only screen and (min-width: 1024px) and (max-width: 1279px) {
-  .saveChanges,
-  .deleteAgenda {
-    font-size: 2em;
-  }
-
-  .itemInfo {
-    font-size: 1.5em;
-  }
-
-  .logo {
-    font-size: 2em;
-  }
-
-  .accountLink {
-    font-size: 1.8em;
-  }
-}
-
-@media only screen and (min-width: 1280px) and (max-width: 2560px) {
-  .agendaItem {
-    width: 30vw;
-  }
-
-  .logo,
-  .accountLink {
-    padding-top: 1.5vh;
-  }
-}
-
-@media only screen and (min-width: 2560px) {
-  .saveChanges,
-  .deleteAgenda {
-    font-size: 2em;
-  }
-
-  .logo {
-    font-size: 2em;
-    padding-top: 1%;
-  }
-
-  .accountLink {
-    font-size: 1.8em;
-    padding-top: 1%;
-  }
-
-  .agendaItem {
-    width: 30vw;
-  }
 }

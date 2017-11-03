@@ -27,22 +27,24 @@
   <main>
   <div class="signUpPage">
     <div class="signUpContainer">
+      <button class="signUpExit">x</button>
       <h1 class="signUpTitle">Sign Up</h1>
-      <h2>Username</h2>
-      <input type="text" class="locationSearch signUpField username">
-      <h2>Password</h2>
+      <h2 class="signUpLabel">Username</h2>
+      <input type="text" class="locationSearch signUpField username" placeholder="">
+      <h2 class="signUpLabel">Password</h2>
       <input type="password" class="locationSearch signUpField password">
-      <h2>Confirm Password</h2>
+      <h2 class="signUpLabel">Confirm Password</h2>
       <input type="password" class="locationSearch signUpField confirmPassword">
       <button class="confirm signUpConfirm">Confirm</button>
     </div>
   </div>
   <div class="logInPage">
     <div class="signUpContainer logInContainer">
+      <button class="signUpExit">x</button>
       <h1 class="signUpTitle">Log In</h1>
-      <h2>Username</h2>
+      <h2 class="signUpLabel">Username</h2>
       <input type="text" class="locationSearch logInUsername">
-      <h2>Password</h2>
+      <h2 class="signUpLabel">Password</h2>
       <input type="password" class="locationSearch logInPassword">
       <button class="confirm logInConfirm">Confirm</button>
       <div class="demoAccount">
@@ -65,7 +67,7 @@
     </div>
     <div class="section thirdPage">
       <div class="choosePrice itemPage">
-        <h1 class="pageTitle">Select a price point:</h1>
+        <h1 class="pageTitle">First, select a price point:</h1>
         <button class="choice js-priceChoice firstChoice">
           <div class="choiceNav">
             <img src="./images/019-dollar-1.png" alt="single coin" class="icon">
@@ -87,7 +89,7 @@
     </div>
     <div class="section">
       <div class="chooseLength itemPage">
-        <h1 class="pageTitle">Select a trip length:</h1>
+        <h1 class="pageTitle">Next, select a trip length:</h1>
         <button class="choice js-lengthChoice firstChoice">
           <img src="./images/hiker.png" alt="hiker" class="icon">
           <h1 class="choiceHeader firstLengthHeader">Scout</h1>
@@ -107,7 +109,7 @@
     </div>
     <div class="section">
       <div class="chooseActivity itemPage">
-        <h1 class="pageTitle">Select an activity:</h1>
+        <h1 class="pageTitle">Then, select an activity:</h1>
         <button class="choice js-activityChoice firstChoice">
           <img src="./images/theater.png" alt="theater" class="icon">
           <h1 class="choiceHeader firstActivityHeader">Culture</h1>
@@ -127,7 +129,7 @@
     </div>
     <div class="section">
       <div class="chooseLocation itemPage">
-        <h1 class="pageTitle locationTitle">Select a location:</h1>
+        <h1 class="pageTitle locationTitle">Finally, select a location:</h1>
         <a href="./html/agenda.html" class="currentLocationPlan">
           <button class="choice js-currentLocation currentLocation">
             <img src="./images/048-location.png" alt="current location" class="icon">

@@ -39,6 +39,59 @@ handleYelp = () => {
   handleSignUp = () => {
     $('.signUp').on('click', function() {
       $('.signUpPage').slideDown('slow');
+      $('.confirmPassword').keyup(function(event) {
+        if (event.keyCode === 13) {
+          console.log('triggered');
+          $('.signUpExit').on('click', function() {
+            $('.signUpPage').slideUp('slow');
+          });
+          if ($('.username').val() === '') {
+            $('.username').attr('placeholder', 'Enter a username.');
+          } else if ($('.password').val() === '') {
+            $('.password').attr('placeholder', 'Enter a password.');
+          } else if ($('.confirmPassword').val() === '') {
+            $('.confirmPassword').attr('placeholder', 'Confirm your password.');
+          } else if ($('.confirmPassword').val() !== $('.password').val()) {
+            $('.confirmPassword').val('');
+            $('.confirmPassword').attr('placeholder', 'Must match.');
+          } else {
+            $.ajax({
+              type: 'POST',
+              url: '/users',
+              data: {
+                username: $('.username').val(),
+                password: $('.password').val()
+              },
+              success: function(response) {
+                localStorage.setItem('username', $('.username').val());
+                $('.login').css('display', 'none');
+                $('.logOut').css('display', 'block');
+                $('.signUp').css('background-color', '#2fd3ff');
+                $('.signUp').css('color', 'white');
+                $('.signUp').css('border', '0');
+                $('.signUp').text('Signed Up');
+                $('.accountLink').text($('.username').val());
+                $('.accountLink').css('display', 'inline-block');
+                $('.signUpPage').slideUp('slow');
+                $('.username').val('');
+                $('.password').val('');
+                $('.confirmPassword').val('');
+                $('.accountLink').unbind('click');
+              },
+              error: function(err) {
+                const response = err.responseJSON;
+                alert(response.message);
+                $('.username').val('');
+                $('.password').val('');
+                $('.confirmPassword').val('');
+              }
+            });
+          }
+        }
+      });
+      $('.signUpExit').on('click', function() {
+        $('.signUpPage').slideUp('slow');
+      });
       $('.signUpConfirm').on('click', function() {
         if ($('.username').val() === '') {
           $('.username').attr('placeholder', 'Enter a username.');
@@ -58,7 +111,6 @@ handleYelp = () => {
               password: $('.password').val()
             },
             success: function(response) {
-              $.fn.fullpage.moveTo(2);
               localStorage.setItem('username', $('.username').val());
               $('.login').css('display', 'none');
               $('.logOut').css('display', 'block');
@@ -73,6 +125,13 @@ handleYelp = () => {
               $('.password').val('');
               $('.confirmPassword').val('');
               $('.accountLink').unbind('click');
+            },
+            error: function(err) {
+              const response = err.responseJSON;
+              alert(response.message);
+              $('.username').val('');
+              $('.password').val('');
+              $('.confirmPassword').val('');
             }
           });
         }
@@ -82,8 +141,58 @@ handleYelp = () => {
 
   //Function with event listener for when user clicks 'Log In' button.
   handleLogIn = () => {
+    $('.logInPassword').keyup(function(event) {
+      if (event.keyCode === 13) {
+        $('.signUpExit').on('click', function() {
+          $('.logInPage').slideUp('slow');
+        });
+        if ($('.logInUsername').val() === '') {
+          $('.logInUsername').attr('placeholder', 'Enter a username.');
+        } else if ($('.logInPassword').val() === '') {
+          $('.logInPassword').attr('placeholder', 'Enter a password.');
+        } else {
+          $.ajax({
+            type: 'POST',
+            url: '/auth/login',
+            headers: {
+              Authorization:
+                'Basic ' +
+                btoa(
+                  $('.logInUsername').val() + ':' + $('.logInPassword').val()
+                )
+            },
+            success: function(response) {
+              const AuthToken = response.authToken;
+              localStorage.setItem('token', AuthToken);
+              localStorage.setItem('username', $('.logInUsername').val());
+              $.ajax({
+                type: 'POST',
+                url: '/auth/refresh',
+                headers: {
+                  Authorization: 'Bearer ' + AuthToken
+                },
+                success: function(success) {
+                  $('.login').css('display', 'none');
+                  $('.logOut').css('display', 'block');
+                  $('.accountLink').text($('.logInUsername').val());
+                  $('.accountLink').css('display', 'inline-block');
+                  $('.logInPage').slideUp('slow');
+                  $('.accountLink').unbind('click');
+                }
+              });
+            },
+            error: function(err) {
+              console.log(err);
+            }
+          });
+        }
+      }
+    });
     $('.login').on('click', function() {
       $('.logInPage').slideDown('slow');
+      $('.signUpExit').on('click', function() {
+        $('.logInPage').slideUp('slow');
+      });
       $('.logInConfirm').on('click', function() {
         if ($('.logInUsername').val() === '') {
           $('.logInUsername').attr('placeholder', 'Enter a username.');
@@ -111,7 +220,6 @@ handleYelp = () => {
                   Authorization: 'Bearer ' + AuthToken
                 },
                 success: function(success) {
-                  $.fn.fullpage.moveTo(2);
                   $('.login').css('display', 'none');
                   $('.logOut').css('display', 'block');
                   $('.accountLink').text($('.logInUsername').val());
@@ -120,6 +228,9 @@ handleYelp = () => {
                   $('.accountLink').unbind('click');
                 }
               });
+            },
+            error: function(err) {
+              console.log(err);
             }
           });
         }
@@ -132,10 +243,6 @@ handleYelp = () => {
   });
   $('.currentLocationPlan').bind('click', function(e) {
     e.preventDefault();
-  });
-
-  $('.secondPage').on('click', function(event) {
-    $.fn.fullpage.moveTo(2);
   });
 
   // Function used when user clicks 'Get Current Location' option.
@@ -225,11 +332,8 @@ handleYelp = () => {
         if ($('.locationSearchSpecial').val() === '') {
           $('.locationSearchSpecial').attr('placeholder', 'Enter a location.');
         } else if (priceOfTrip === undefined) {
-          $.fn.fullpage.moveTo(2);
         } else if (lengthOfTrip === undefined) {
-          $.fn.fullpage.moveTo(3);
         } else if (activityOfTrip === undefined) {
-          $.fn.fullpage.moveTo(4);
         } else {
           locationOfTrip = $('.locationSearchSpecial').val();
 
@@ -257,11 +361,8 @@ handleYelp = () => {
       if ($('.locationSearchSpecial').val() === '') {
         $('.locationSearchSpecial').attr('placeholder', 'Enter a location.');
       } else if (priceOfTrip === undefined) {
-        $.fn.fullpage.moveTo(2);
       } else if (lengthOfTrip === undefined) {
-        $.fn.fullpage.moveTo(3);
       } else if (activityOfTrip === undefined) {
-        $.fn.fullpage.moveTo(4);
       } else {
         locationOfTrip = $('.locationSearchSpecial').val();
 
@@ -281,11 +382,8 @@ handleYelp = () => {
   handleCurrentLocation = () => {
     $('.js-currentLocation').on('click', function(event) {
       if (priceOfTrip === undefined) {
-        $.fn.fullpage.moveTo(2);
       } else if (lengthOfTrip === undefined) {
-        $.fn.fullpage.moveTo(3);
       } else if (activityOfTrip === undefined) {
-        $.fn.fullpage.moveTo(4);
       } else {
         getLocation();
       }
@@ -303,11 +401,6 @@ handleYelp = () => {
 
 $(() => {
   handleYelp();
-  //jQuery plugin for fullpage scrolling.
-  /*$('#fullpage').fullpage({
-    anchors: ['section1', 'section2', 'section3', 'section4'],
-    responsiveWidth: 3000
-  });*/
 
   //jQuery plugin for auto-typing text on landing page.
   $('.typedText').typeIt({
