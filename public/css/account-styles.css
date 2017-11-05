@@ -23,10 +23,6 @@ a {
   font-size: 14px;
 }
 
-.savedLink {
-  padding-left: 2.5%;
-}
-
 .navbar:focus {
   outline: 0 !important;
 }

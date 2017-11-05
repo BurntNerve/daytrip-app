@@ -16,15 +16,10 @@ const router = express.Router();
 
 router.post(
   '/login',
-  passport.authenticate('basic', { session: false, failWithError: true }),
-  function(req, res) {
+  passport.authenticate('basic', { session: false }),
+  (req, res) => {
     const authToken = createAuthToken(req.user.apiRepr());
     res.json({ authToken });
-  },
-  function(err, req, res, next) {
-    if (req.xhr) {
-      return res.json(err);
-    }
   }
 );
 
